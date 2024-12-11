@@ -11,6 +11,11 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        geistSans: "var(--font-geist-sans)",
+        robotoMedium: "var(--font-roboto-medium)",
+        barlow: ["Barlow", "sans-serif"],
+      },
     },
   },
   plugins: [],

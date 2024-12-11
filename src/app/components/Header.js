@@ -2,12 +2,12 @@
 import { useState, useEffect } from "react";
 
 export default function Header({
-    children,
-    paddingY = "normal",
-    paddingX = "normal",
+    children, // Contenido del header
+    paddingY = "normal", // Padding Y normal por defecto
+    paddingX = "normal", // Padding X normal por defecto
     bgColor = "bg-white", // Fondo inicial transparente
     scrolledBgColor = null, // Fondo al hacer scroll
-    isFixed = true,
+    isFixed = true, // Position fixed por defecto
 }) {
     const [hasScrolled, setHasScrolled] = useState(false);
 
