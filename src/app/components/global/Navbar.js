@@ -10,7 +10,7 @@ export default function Navbar({
     hoverUnderline, // Tipo de subrayado al pasar el mouse
     hoverTransform = null, // Peso de fuente al pasar el mouse
     itemsWeight = "normal", // Transformación al pasar el mouse
-    transition = true, // Transición al pasar el mouse
+    transition = false, // Transición al pasar el mouse
 }) {
     if (!navItems) {
         return null;
@@ -32,11 +32,12 @@ export default function Navbar({
 
     // Clases de familia de fuente
     const fontFamilyClasses = {
-        sans: "sans",
-        serif: "serif",
-        mono: "mono",
-        robotoMedium: "robotoMedium",
-        barlow: "barlow",
+        sans: "font-sans",
+        serif: "font-serif",
+        mono: "font-mono",
+        robotoMedium: "font-robotoMedium",
+        barlow: "font-barlow",
+        oswald: "font-oswald"
     };
 
     // Clases de transformación al pasar el mouse
@@ -46,6 +47,7 @@ export default function Navbar({
         big: "hover:scale-[1.04]",
     };
 
+    // Clases de peso de fuente
     const weightClasses = {
         small: "font-medium",
         normal: "font-semibold",
@@ -55,26 +57,10 @@ export default function Navbar({
     return (
         <nav className={`flex ${spaceBetweenItemsClasses[spaceBetweenItems]}`}>
             {navItems.map((item, index) => (
-                <a key={index} href={item.href} id={`link-${index}`} className={`
-                    flex items-center
-                    ${fontSizeClasses[fontSize]}
-                    font-${fontFamilyClasses[fontFamily]} 
-                    ${hoverUnderline ? "hover:underline" : ""}
-                    ${color} ${hoverColor}
-                    ${hoverTransformClasses[hoverTransform]}
-                    ${weightClasses[itemsWeight]}
-                    font-bold
-                    ${transition ? "transition duration-300" : ""}
-                    transform
-                `}>{item.text}</a>
+                <a key={index} href={item.href} id={`link-${index}`} className={`flex items-center ${fontSizeClasses[fontSize]} ${fontFamilyClasses[fontFamily]} ${hoverUnderline && "hover:underline"} ${color} ${hoverColor} ${hoverTransform && hoverTransformClasses[hoverTransform]} ${weightClasses[itemsWeight]} ${transition && "transition duration-300"} transform`}>
+                    {item.text}
+                </a>
             ))}
-            {/* <button
-                className={`
-                    border-2 border-[#FF4C46] rounded-md px-4 py-2
-                `}
-            >
-                Iniciar sesión
-            </button> */}
         </nav>
     );
 }

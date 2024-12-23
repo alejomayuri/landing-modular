@@ -1,7 +1,7 @@
 "use client"
 import { useState, useEffect } from "react";
 
-export default function Header({
+export default function HeaderWrapper({
     children, // Contenido del header
     paddingY = "normal", // Padding Y normal por defecto
     paddingX = "normal", // Padding X normal por defecto
@@ -57,4 +57,4 @@ export default function Header({
             </div>
         </header>
     );
-  }
+}

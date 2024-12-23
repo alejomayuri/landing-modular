@@ -15,6 +15,7 @@ module.exports = {
         geistSans: "var(--font-geist-sans)",
         robotoMedium: "var(--font-roboto-medium)",
         barlow: ["Barlow", "sans-serif"],
+        oswald: "var(--font-oswald)",
       },
     },
   },

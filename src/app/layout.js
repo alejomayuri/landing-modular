@@ -14,7 +14,12 @@ const geistMono = localFont({
 const robotoMedium = localFont({
   src: "./fonts/Roboto/Roboto-Medium.ttf",
   variable: "--font-roboto-medium",
-  weight: "100 400 900",
+  weight: "100 900",
+});
+const oswald = localFont({
+  src: "./fonts/Oswald/Oswald-VariableFont_wght.ttf",
+  variable: "--font-oswald",
+  weight: "100 900",
 });
 
 export const metadata = {
@@ -26,7 +31,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${robotoMedium.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${robotoMedium.variable} ${oswald.variable} antialiased`}
       >
         {children}
       </body>
