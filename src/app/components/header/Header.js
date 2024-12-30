@@ -12,11 +12,13 @@ export default function Header({ data }) {
 
     // Valores globales
     const {
-        paddingY = "py-4",
-        paddingX = "px-4",
-        bgColor = "bg-white",
-        scrolledBgColor = "bg-gray-100",
-        isFixed = false,
+        paddingY,
+        paddingX,
+        bgColor,
+        scrolledBgColor,
+        isFixed,
+        aligne,
+        shadow
     } = global || {};
 
     // Componente Logo
@@ -41,38 +43,79 @@ export default function Header({ data }) {
                 fontFamily={navbar.fontFamily}
                 itemsWeight={navbar.itemsWeight}
                 transition={navbar.transition}
+                spaceBetweenItems={navbar.spaceBetweenItems}
+                fontSize={navbar.fontSize}
             />
         ) : null;
 
     // Componente CallAction
-    const showCallAction =
-        callAction && Object.keys(callAction).length > 0 ? (
-            <CallAction
-                text={callAction.text}
-                href={callAction.href}
-                borderWidth={callAction.borderWidth}
-                borderColor={callAction.borderColor}
-                borderRadius={callAction.borderRadius}
-                hoverBorderColor={callAction.hoverBorderColor}
-                backgroundColor={callAction.backgroundColor}
-                hoverBackgroundColor={callAction.hoverBackgroundColor}
-                textColor={callAction.textColor}
-                hoverTextColor={callAction.hoverTextColor}
-                transition={callAction.transition}
-            />
-        ) : null;
-
+    const showCallAction = callAction && Object.keys(callAction).length > 0 ? (
+        <div className="flex gap-4 items-center">
+            {callAction.map((item, index) => {
+                const { 
+                    text, 
+                    href, 
+                    borderWidth, 
+                    borderColor, 
+                    borderRadius, 
+                    hoverBorderColor, 
+                    backgroundColor, 
+                    hoverBackgroundColor, 
+                    textColor, 
+                    hoverTextColor, 
+                    transition,
+                    paddingY
+                } = item;
+        
+                return (
+                    <CallAction
+                        key={index}
+                        text={text}
+                        href={href}
+                        borderWidth={borderWidth}
+                        borderColor={borderColor}
+                        borderRadius={borderRadius}
+                        hoverBorderColor={hoverBorderColor}
+                        backgroundColor={backgroundColor}
+                        hoverBackgroundColor={hoverBackgroundColor}
+                        textColor={textColor}
+                        hoverTextColor={hoverTextColor}
+                        transition={transition}
+                        paddingY={paddingY}
+                    />
+                );
+            })}
+        </div>
+    ) : null;
+    
     // Determinar contenido según el tipo
     let content;
     if (type === 1) {
         content = (
             <>
                 {showLogo}
-                {showNavbar}
-                {showCallAction}
             </>
         );
     } else if (type === 2) {
+        content = (
+            <>
+                {showNavbar}
+            </>
+        );
+    } else if (type === 3) {
+        content = (
+            <>
+                {showCallAction}
+            </>
+        );
+    } else if (type === 4) {
+        content = (
+            <>
+                {showLogo}
+                {showCallAction}
+            </>
+        );
+    } else if (type === 5) {
         content = (
             <>
                 {showLogo}
@@ -80,7 +123,14 @@ export default function Header({ data }) {
                     {showNavbar}
                     {showCallAction}
                 </div>
+            </>
+        );
+    } else if (type === 6) {
+        content = (
+            <>
                 {showLogo}
+                {showNavbar}
+                {showCallAction}
             </>
         );
     }
@@ -92,6 +142,8 @@ export default function Header({ data }) {
             bgColor={bgColor}
             isFixed={isFixed}
             scrolledBgColor={scrolledBgColor}
+            aligne={aligne}
+            shadow={shadow}
         >
             {content}
         </HeaderWrapper>

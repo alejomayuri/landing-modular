@@ -8,6 +8,8 @@ export default function HeaderWrapper({
     bgColor = "bg-white", // Fondo inicial transparente
     scrolledBgColor = null, // Fondo al hacer scroll
     isFixed = true, // Position fixed por defecto
+    aligne = "left", // Orientación horizontal por defecto
+    shadow = false, // Sombra por defecto
 }) {
     const [hasScrolled, setHasScrolled] = useState(false);
 
@@ -36,9 +38,16 @@ export default function HeaderWrapper({
     
     // Clases de padding en X
     const paddingXClasses = {
-        high: "px-14",
-        normal: "px-6",
-        low: "px-3",
+        high: "px-20",
+        normal: "px-14",
+        low: "px-6",
+    };
+
+    // Clases de alineación
+    const alignClasses = {
+        left: "justify-between",
+        center: "justify-center",
+        right: "justify-end",
     };
 
     // Clase de posición dependiendo de `isFixed`
@@ -47,12 +56,14 @@ export default function HeaderWrapper({
     // Clases dinámicas para el fondo
     const backgroundClass = hasScrolled ? scrolledBgColor ?? bgColor : bgColor;
 
+    const shadowClass = shadow ? "shadow" : "";
+
     return (
         <header className={`
-            ${backgroundClass} ${paddingYClasses[paddingY]} ${paddingXClasses[paddingX]} ${positionClass} 
-            shadow transition-colors duration-300
+            ${backgroundClass} ${paddingYClasses[paddingY]} ${paddingXClasses[paddingX]} ${positionClass} ${shadowClass}
+            transition-colors duration-300
         `}>
-            <div className="container mx-auto flex items-center justify-between">
+            <div className={`mx-auto flex items-center ${alignClasses[aligne]}`}>
                 {children}
             </div>
         </header>

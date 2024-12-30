@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function Navbar({ 
+export default function CallAction({ 
     text, 
     href,
     borderWidth = null, // Ancho del borde
@@ -12,6 +12,7 @@ export default function Navbar({
     textColor = "text-gray-600", // Color de texto
     hoverTextColor = null, // Color de texto al pasar el mouse
     transition = false, // Transición al pasar el mouse
+    paddingY = "low", // Padding Y normal por defecto
 }) {
     if(!text || text === "") {
         return null;
@@ -30,6 +31,12 @@ export default function Navbar({
         full: "rounded-full"
     }
 
+    const paddingYClasses = {
+        high: "py-4",
+        normal: "py-3",
+        low: "py-2",
+    };
+
     return (
         <Link href={href}>
             <button className={`
@@ -41,8 +48,9 @@ export default function Navbar({
                     ${hoverBackgroundColor}
                     ${textColor}
                     ${hoverTextColor}
-                    ${transition && "transition duration-300"}
-                    px-4 py-2 transform`}>
+                    ${transition && "transition duration-200"}
+                    ${paddingYClasses[paddingY]}
+                    px-4 transform flex items-center justify-center`}>
                 {text}
             </button>
         </Link>
