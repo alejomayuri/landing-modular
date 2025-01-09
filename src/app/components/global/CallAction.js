@@ -8,6 +8,7 @@ export default function CallAction({
     borderRadius = null, // Radio de borde
     hoverBorderColor = null, // Color del borde al pasar el mouse
     backgroundColor = null, // Color de fondo
+    fontFamily = "sans", // Familia de fuente
     hoverBackgroundColor = null, // Color de fondo al pasar el mouse
     textColor = "text-gray-600", // Color de texto
     hoverTextColor = null, // Color de texto al pasar el mouse
@@ -37,6 +38,16 @@ export default function CallAction({
         low: "py-2",
     };
 
+    // Clases de familia de fuente
+    const fontFamilyClasses = {
+        sans: "font-sans",
+        serif: "font-serif",
+        mono: "font-mono",
+        robotoMedium: "font-robotoMedium",
+        barlow: "font-barlow",
+        oswald: "font-oswald"
+    };
+
     return (
         <Link href={href}>
             <button className={`
@@ -44,6 +55,7 @@ export default function CallAction({
                     ${borderColor}
                     ${borderRadius && borderRadiusClasses[borderRadius]}
                     ${hoverBorderColor}
+                    ${fontFamilyClasses[fontFamily]}
                     ${backgroundColor}
                     ${hoverBackgroundColor}
                     ${textColor}

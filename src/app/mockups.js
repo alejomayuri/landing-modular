@@ -182,30 +182,32 @@ export const demo_third = {
         },
         callAction: [
             {
-            text: "EMPRESAS",
-            href: "#iniciar-sesion",
-            borderWidth: "normal",
-            borderRadius: "big",
-            borderColor: "border-[#98CA3F]",
-            hoverBorderColor: "hover:border-[#C1DF8B]",
-            backgroundColor: null,
-            hoverBackgroundColor: null,
-            textColor: "text-[#98CA3F]",
-            hoverTextColor: "hover:text-[#C1DF8B]",
-            transition: true
+                text: "EMPRESAS",
+                href: "#iniciar-sesion",
+                borderWidth: "normal",
+                borderRadius: "big",
+                borderColor: "border-[#98CA3F]",
+                hoverBorderColor: "hover:border-[#C1DF8B]",
+                backgroundColor: null,
+                hoverBackgroundColor: null,
+                textColor: "text-[#98CA3F]",
+                hoverTextColor: "hover:text-[#C1DF8B]",
+                transition: true,
+                fontFamily: "oswald",
             },
             {
-              text: "LOG IN",
-              href: "#registrate",
-              borderWidth: "normal",
-              borderRadius: "big",
-              borderColor: "border-[#98CA3F]",
-              hoverBorderColor: "hover:border-[#C1DF8B]",
-              backgroundColor: "bg-[#98CA3F]",
-              hoverBackgroundColor: "hover:bg-[#C1DF8B]",
-              textColor: "text-[#fff]",
-              hoverTextColor: null,
-              transition: true
+                text: "LOG IN",
+                href: "#registrate",
+                borderWidth: "normal",
+                borderRadius: "big",
+                borderColor: "border-[#98CA3F]",
+                hoverBorderColor: "hover:border-[#C1DF8B]",
+                backgroundColor: "bg-[#98CA3F]",
+                hoverBackgroundColor: "hover:bg-[#C1DF8B]",
+                textColor: "text-[#fff]",
+                hoverTextColor: null,
+                transition: true,
+                fontFamily: "oswald",
             }
         ],
     }
@@ -247,20 +249,16 @@ export const demo_fourth = {
             transition: true,
             spaceBetweenItems: "big"
         },
-        callAction: [
-            {
-            text: "COMPRAR",
-            href: "#iniciar-sesion",
-            borderWidth: "normal",
-            borderRadius: "normal",
-            borderColor: "border-[#383c43]",
-            hoverBorderColor: null,
-            backgroundColor: null,
-            hoverBackgroundColor: null,
-            textColor: "text-[#383c43]",
-            hoverTextColor: null,
-            transition: true
-            },
-        ],
+        icons : {
+            icons: [
+                { icon: "question", href: "#xd" },
+                { icon: "internet", href: "#xd" },
+                { icon: "person", href: "#" }
+            ],
+            spaceBetweenItems: "normal",
+            color: "text-gray-800",
+            hoverColor: "hover:text-red-600",
+            size: "small"
+        }
     }
 };

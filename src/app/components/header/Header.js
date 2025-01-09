@@ -2,13 +2,14 @@ import HeaderWrapper from "./HeaderWrapper";
 import Logo from "../global/Logo";
 import Navbar from "../global/Navbar";
 import CallAction from "../global/CallAction";
+import IconBox from "../global/IconBox";
 
 export default function Header({ data }) {
     if (!data || Object.keys(data).length === 0) {
         return null; // Devuelve null si no hay datos
     }
 
-    const { type, global, logo, navbar, callAction } = data;
+    const { type, global, logo, navbar, callAction, icons } = data;
 
     // Valores globales
     const {
@@ -48,6 +49,17 @@ export default function Header({ data }) {
             />
         ) : null;
 
+    // Componente IconBox
+    const showIcons = icons && Object.keys(icons).length > 0 ? (
+        <IconBox
+            icons={icons.icons}
+            spaceBetweenItems={icons.spaceBetweenItems}
+            color={icons.color}
+            hoverColor={icons.hoverColor}
+            size={icons.size}
+        />
+    ) : null;
+
     // Componente CallAction
     const showCallAction = callAction && Object.keys(callAction).length > 0 ? (
         <div className="flex gap-4 items-center">
@@ -64,6 +76,7 @@ export default function Header({ data }) {
                     textColor, 
                     hoverTextColor, 
                     transition,
+                    fontFamily,
                     paddingY
                 } = item;
         
@@ -75,6 +88,7 @@ export default function Header({ data }) {
                         borderWidth={borderWidth}
                         borderColor={borderColor}
                         borderRadius={borderRadius}
+                        fontFamily={fontFamily}
                         hoverBorderColor={hoverBorderColor}
                         backgroundColor={backgroundColor}
                         hoverBackgroundColor={hoverBackgroundColor}
@@ -130,7 +144,17 @@ export default function Header({ data }) {
             <>
                 {showLogo}
                 {showNavbar}
-                {showCallAction}
+                {showIcons}
+            </>
+        );
+    } else if (type === 7) {
+        content = (
+            <>
+                {showLogo}
+                <div className="flex gap-10 items-center">
+                    {showCallAction}
+                    {showIcons}
+                </div>
             </>
         );
     }
