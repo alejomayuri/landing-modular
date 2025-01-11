@@ -266,6 +266,7 @@ export const demo_fourth = {
         },
         menuMobile: {
             color: "#383c43",
+            itemsColor: "text-gray-900",
         }
     }
 };

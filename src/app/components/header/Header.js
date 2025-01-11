@@ -109,7 +109,11 @@ export default function Header({ data }) {
 
     // Componente MenuMobile
     const showMenuMobile = menuMobile && Object.keys(menuMobile).length > 0 ? (
-        <MenuMobile color={menuMobile.color} />
+        <MenuMobile
+            color={menuMobile.color} 
+            navItems={navbar.navItems}
+            itemsColor={menuMobile.itemsColor}
+        />
     ) : null;
     
     // Determinar contenido según el tipo
