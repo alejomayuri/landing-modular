@@ -55,7 +55,7 @@ export default function Navbar({
     };
 
     return (
-        <nav className={`flex ${spaceBetweenItemsClasses[spaceBetweenItems]}`}>
+        <nav className={` hidden lg:flex ${spaceBetweenItemsClasses[spaceBetweenItems]}`}>
             {navItems.map((item, index) => (
                 <a key={index} href={item.href} id={`link-${index}`} className={`flex items-center ${fontSizeClasses[fontSize]} ${fontFamilyClasses[fontFamily]} ${hoverUnderline && "hover:underline"} ${color} ${hoverColor} ${hoverTransform && hoverTransformClasses[hoverTransform]} ${weightClasses[itemsWeight]} ${transition && "transition duration-200"} transform`}>
                     {item.text}

@@ -1,8 +1,16 @@
 import Link from "next/link";
+import IgIcon from "../ui/icons/ig";
+import FbIcon from "../ui/icons/fb";
+import InternetIcon from "../ui/icons/internet";
+import QuestionIcon from "../ui/icons/question";
+import PersonIcon from "../ui/icons/person";
 
 export default function CallAction({ 
     text, 
     href,
+    icon, // Icono del botón
+    iconPosition = "left", // Posición del icono
+    iconColor = null, // Color del icono
     borderWidth = null, // Ancho del borde
     borderColor = null, // Color del borde
     borderRadius = null, // Radio de borde
@@ -18,6 +26,18 @@ export default function CallAction({
     if(!text || text === "") {
         return null;
     }
+
+    const iconComponents = {
+        ig: IgIcon,
+        fb: FbIcon,
+        internet: InternetIcon,
+        question: QuestionIcon,
+        person: PersonIcon
+    };
+
+    const IconComponent = iconComponents[icon];
+
+    console.log("icon", icon)
 
     const borderWidthClasses = {
         small: "border",
@@ -47,9 +67,9 @@ export default function CallAction({
         barlow: "font-barlow",
         oswald: "font-oswald"
     };
-
+    console.log("IconComponent", IconComponent)
     return (
-        <Link href={href}>
+        <Link href={href} className="hidden lg:block">
             <button className={`
                     ${borderWidth && borderWidthClasses[borderWidth]} 
                     ${borderColor}
@@ -62,8 +82,14 @@ export default function CallAction({
                     ${hoverTextColor}
                     ${transition && "transition duration-200"}
                     ${paddingYClasses[paddingY]}
-                    px-4 transform flex items-center justify-center`}>
+                    px-4 transform flex items-center justify-center gap-2 `}>
+                {icon && iconPosition === "left" ? (
+                    <IconComponent width="20px" height="20px" fill="currentColor"/>
+                ) : null}
                 {text}
+                {icon && iconPosition === "right" ? (
+                    <IconComponent width="20px" height="20px" fill="currentColor"/>
+                ) : null}
             </button>
         </Link>
     )

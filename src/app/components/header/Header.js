@@ -3,13 +3,14 @@ import Logo from "../global/Logo";
 import Navbar from "../global/Navbar";
 import CallAction from "../global/CallAction";
 import IconBox from "../global/IconBox";
+import MenuMobile from "../global/MenuMobile";
 
 export default function Header({ data }) {
     if (!data || Object.keys(data).length === 0) {
         return null; // Devuelve null si no hay datos
     }
 
-    const { type, global, logo, navbar, callAction, icons } = data;
+    const { type, global, logo, navbar, callAction, icons, menuMobile } = data;
 
     // Valores globales
     const {
@@ -77,7 +78,9 @@ export default function Header({ data }) {
                     hoverTextColor, 
                     transition,
                     fontFamily,
-                    paddingY
+                    paddingY,
+                    icon,
+                    iconPosition,
                 } = item;
         
                 return (
@@ -96,10 +99,17 @@ export default function Header({ data }) {
                         hoverTextColor={hoverTextColor}
                         transition={transition}
                         paddingY={paddingY}
+                        icon={icon}
+                        iconPosition={iconPosition}
                     />
                 );
             })}
         </div>
+    ) : null;
+
+    // Componente MenuMobile
+    const showMenuMobile = menuMobile && Object.keys(menuMobile).length > 0 ? (
+        <MenuMobile color={menuMobile.color} />
     ) : null;
     
     // Determinar contenido según el tipo
@@ -142,15 +152,20 @@ export default function Header({ data }) {
     } else if (type === 6) {
         content = (
             <>
-                {showLogo}
+                <div className="flex gap-3 items-center">
+                    {showMenuMobile}
+                    {showLogo}
+                </div>
                 {showNavbar}
                 {showIcons}
             </>
         );
     } else if (type === 7) {
         content = (
-            <>
-                {showLogo}
+            <>  <div>
+                    {showLogo}
+                    {showMenuMobile}
+                </div>
                 <div className="flex gap-10 items-center">
                     {showCallAction}
                     {showIcons}

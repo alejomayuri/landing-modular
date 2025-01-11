@@ -12,6 +12,10 @@ export default function IconBox({
     hoverColor = null, // Color del ícono al pasar el mouse
     size = "normal"
 }) {
+    if (!icons) {
+        return null;
+    }
+
     // Diccionario de íconos para facilitar el acceso
     const iconComponents = {
         ig: IgIcon,
@@ -36,7 +40,7 @@ export default function IconBox({
     }
 
     return (
-        <div className={`flex ${
+        <div className={` hidden lg:flex ${
             spaceBetweenItemsClasses[spaceBetweenItems]
         }`}>
             {icons.map((iconData, index) => {
@@ -52,9 +56,7 @@ export default function IconBox({
                         aria-label={`Enlace a ${iconData.icon}`}
                         className=" transition-opacity"
                     >
-                        <IconComponent className={`${color} ${hoverColor} ${sizeClasses[size]} transition duration-200`} fill="currentColor" 
-                            
-                        />
+                        <IconComponent className={`${color} ${hoverColor} ${sizeClasses[size]} transition duration-200`} fill="currentColor" />
                     </Link>
                 );
             })}

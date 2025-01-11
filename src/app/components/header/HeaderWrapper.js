@@ -38,9 +38,9 @@ export default function HeaderWrapper({
     
     // Clases de padding en X
     const paddingXClasses = {
-        high: "px-20",
-        normal: "px-14",
-        low: "px-6",
+        high: "lg:px-20",
+        normal: "lg:px-14",
+        low: "lg:px-6",
     };
 
     // Clases de alineación
@@ -61,7 +61,7 @@ export default function HeaderWrapper({
     return (
         <header className={`
             ${backgroundClass} ${paddingYClasses[paddingY]} ${paddingXClasses[paddingX]} ${positionClass} ${shadowClass}
-            transition-colors duration-300
+            transition-colors duration-300 px-3
         `}>
             <div className={`mx-auto flex items-center ${alignClasses[aligne]}`}>
                 {children}

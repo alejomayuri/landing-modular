@@ -194,6 +194,8 @@ export const demo_third = {
                 hoverTextColor: "hover:text-[#C1DF8B]",
                 transition: true,
                 fontFamily: "oswald",
+                icon: "internet",
+                iconPosition: "left",
             },
             {
                 text: "LOG IN",
@@ -208,6 +210,8 @@ export const demo_third = {
                 hoverTextColor: null,
                 transition: true,
                 fontFamily: "oswald",
+                icon: null,
+                iconPosition: null,
             }
         ],
     }
@@ -227,8 +231,8 @@ export const demo_fourth = {
         },
         logo: {
             logoSlug: "/pataki.png",
-            logoWidth: 120,
-            logoHeight: 120
+            logoWidth: 90,
+            logoHeight: 90
         },
         navbar: {
             navItems: [
@@ -259,6 +263,9 @@ export const demo_fourth = {
             color: "text-gray-800",
             hoverColor: "hover:text-red-600",
             size: "small"
+        },
+        menuMobile: {
+            color: "#383c43",
         }
     }
 };
