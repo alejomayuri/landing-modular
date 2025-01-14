@@ -360,6 +360,7 @@ export const demo_fifth = {
         menuMobile: {
             type: "default",
             color: "#383c43",
+            navHeight: "big",
             itemsColor: "text-gray-900",
         }
     }

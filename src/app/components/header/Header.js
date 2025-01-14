@@ -111,7 +111,8 @@ export default function Header({ data }) {
     const showMenuMobile = menuMobile && Object.keys(menuMobile).length > 0 ? (
         <MenuMobile
             type={menuMobile.type}
-            color={menuMobile.color} 
+            color={menuMobile.color}
+            navHeight={menuMobile.navHeight}
             navItems={navbar.navItems}
             itemsColor={menuMobile.itemsColor}
             icons={icons}

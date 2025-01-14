@@ -4,7 +4,7 @@ import { defaultData, demo_first, demo_second, demo_third, demo_fourth, demo_fif
 export default function Home() {
   return (
     <> 
-      <Header data={demo_fifth?.header} />
+      <Header data={demo_third?.header} />
       <main>
         {/* Contenido de prueba para scroll */}
         <section className="h-screen bg-gray-100 bg-gradient-to-r from-blue-500 to-purple-500"></section>
