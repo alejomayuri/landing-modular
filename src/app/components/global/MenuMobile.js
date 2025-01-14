@@ -57,7 +57,7 @@ export default function MenuMobile({
 
             
             {isMenuOpen && (<div
-                className={`fixed inset-0 ${menuBgColor} px-10 py-20 z-50 flex flex-col text-white transition-opacity duration-300 ${animation}`}
+                className={`fixed inset-0 ${menuBgColor} px-10 py-8 z-50 flex flex-col text-white transition-opacity duration-300 ${animation}`}
             >
                 <button
                     className="absolute top-5 right-5 text-2xl p-2 rounded-full"
