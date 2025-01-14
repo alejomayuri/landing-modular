@@ -214,6 +214,11 @@ export const demo_third = {
                 iconPosition: null,
             }
         ],
+        menuMobile: {
+            color: "#fff",
+            itemsColor: "text-white",
+            menuBgColor: "bg-[#121F3D]"
+        }
     }
 };
 
@@ -265,6 +270,95 @@ export const demo_fourth = {
             size: "small"
         },
         menuMobile: {
+            color: "#383c43",
+            itemsColor: "text-gray-900",
+        }
+    }
+};
+
+export const demo_fifth = {
+    header: {
+        type: 7,
+        global: {
+            aligne: "left",
+            paddingY: "low",
+            paddingX: "low",
+            bgColor: "bg-[#fff]",
+            scrolledBgColor: null,
+            isFixed: false,
+            shadow: true
+        },
+        logo: {
+            logoSlug: "/pataki.png",
+            logoWidth: 90,
+            logoHeight: 90
+        },
+        navbar: {
+            navItems: [
+                { text: "Vehicles", href: "#inicio" },
+                { text: "Energy", href: "#servicios" },
+                { text: "Charging", href: "#sobre-nosotros" },
+                { text: "Discover", href: "#contacto" },
+                { text: "Shop", href: "#blog" },
+                { text: "We, Robot", href: "#blog" },
+            ],
+            navItemsColor: "text-[#383c43]",
+            hoverColor: null,
+            hoverUnderline: false,
+            hoverTransform: null,
+            itemsWeight: "normal",
+            fontSize: "small",
+            fontFamily: "barlow",
+            transition: true,
+            spaceBetweenItems: "big"
+        },
+        callAction: [
+            {
+                text: "EMPRESAS",
+                href: "#iniciar-sesion",
+                borderWidth: "normal",
+                borderRadius: "big",
+                borderColor: "border-[#383c43]",
+                hoverBorderColor: null,
+                backgroundColor: null,
+                hoverBackgroundColor: null,
+                textColor: "text-[#383c43]",
+                hoverTextColor: "hover:text-gray-600",
+                transition: true,
+                fontFamily: "oswald",
+                icon: "internet",
+                iconPosition: "left",
+            },
+            {
+                text: "LOG IN",
+                href: "#registrate",
+                borderWidth: "normal",
+                borderRadius: "big",
+                borderColor: "border-[#383c43]",
+                hoverBorderColor: null,
+                backgroundColor: "bg-[#383c43]",
+                hoverBackgroundColor: "hover:bg-gray-600",
+                textColor: "text-[#fff]",
+                hoverTextColor: null,
+                transition: true,
+                fontFamily: "oswald",
+                icon: null,
+                iconPosition: null,
+            }
+        ],
+        icons : {
+            icons: [
+                { icon: "ig", href: "#xd" },
+                { icon: "fb", href: "#xd" },
+                { icon: "x", href: "#" }
+            ],
+            spaceBetweenItems: "normal",
+            color: "text-gray-800",
+            hoverColor: "hover:text-gray-600",
+            size: "small"
+        },
+        menuMobile: {
+            type: "default",
             color: "#383c43",
             itemsColor: "text-gray-900",
         }

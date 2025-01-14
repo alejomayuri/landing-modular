@@ -4,13 +4,15 @@ import FbIcon from "../ui/icons/fb";
 import InternetIcon from "../ui/icons/internet";
 import QuestionIcon from "../ui/icons/question";
 import PersonIcon from "../ui/icons/person";
+import XIcon from "../ui/icons/x";
 
 export default function IconBox({ 
     icons, 
     spaceBetweenItems = "normal", // Espacio entre elementos
     color = "text-gray-600", // Color del ícono
     hoverColor = null, // Color del ícono al pasar el mouse
-    size = "normal"
+    size = "normal",
+    useMobile = false
 }) {
     if (!icons) {
         return null;
@@ -22,7 +24,8 @@ export default function IconBox({
         fb: FbIcon,
         internet: InternetIcon,
         question: QuestionIcon,
-        person: PersonIcon
+        person: PersonIcon,
+        x: XIcon
     };
 
     // Clases de espacio entre elementos
@@ -40,7 +43,9 @@ export default function IconBox({
     }
 
     return (
-        <div className={` hidden lg:flex ${
+        <div className={` ${
+            useMobile ? "flex" : "hidden"
+        } lg:flex ${
             spaceBetweenItemsClasses[spaceBetweenItems]
         }`}>
             {icons.map((iconData, index) => {

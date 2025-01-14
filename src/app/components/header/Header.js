@@ -110,9 +110,13 @@ export default function Header({ data }) {
     // Componente MenuMobile
     const showMenuMobile = menuMobile && Object.keys(menuMobile).length > 0 ? (
         <MenuMobile
+            type={menuMobile.type}
             color={menuMobile.color} 
             navItems={navbar.navItems}
             itemsColor={menuMobile.itemsColor}
+            icons={icons}
+            menuBgColor={menuMobile.menuBgColor}
+            callAction={callAction}
         />
     ) : null;
     
@@ -151,28 +155,28 @@ export default function Header({ data }) {
                     {showNavbar}
                     {showCallAction}
                 </div>
+                {showMenuMobile}
             </>
         );
     } else if (type === 6) {
         content = (
             <>
-                <div className="flex gap-3 items-center">
-                    {showMenuMobile}
-                    {showLogo}
-                </div>
+                {showLogo}
                 {showNavbar}
                 {showIcons}
+                {showMenuMobile}
             </>
         );
     } else if (type === 7) {
         content = (
             <>  <div>
                     {showLogo}
-                    {showMenuMobile}
                 </div>
                 <div className="flex gap-10 items-center">
+                    {showNavbar}
                     {showCallAction}
                     {showIcons}
+                    {showMenuMobile}
                 </div>
             </>
         );

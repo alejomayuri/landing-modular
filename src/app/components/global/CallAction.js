@@ -4,6 +4,7 @@ import FbIcon from "../ui/icons/fb";
 import InternetIcon from "../ui/icons/internet";
 import QuestionIcon from "../ui/icons/question";
 import PersonIcon from "../ui/icons/person";
+import XIcon from "../ui/icons/x";
 
 export default function CallAction({ 
     text, 
@@ -22,6 +23,7 @@ export default function CallAction({
     hoverTextColor = null, // Color de texto al pasar el mouse
     transition = false, // Transición al pasar el mouse
     paddingY = "low", // Padding Y normal por defecto
+    useMobile = false
 }) {
     if(!text || text === "") {
         return null;
@@ -32,12 +34,11 @@ export default function CallAction({
         fb: FbIcon,
         internet: InternetIcon,
         question: QuestionIcon,
-        person: PersonIcon
+        person: PersonIcon,
+        x: XIcon
     };
 
     const IconComponent = iconComponents[icon];
-
-    console.log("icon", icon)
 
     const borderWidthClasses = {
         small: "border",
@@ -67,9 +68,11 @@ export default function CallAction({
         barlow: "font-barlow",
         oswald: "font-oswald"
     };
-    console.log("IconComponent", IconComponent)
+    
     return (
-        <Link href={href} className="hidden lg:block">
+        <Link href={href} className={`${
+            useMobile ? "flex w-full" : "hidden"
+        } lg:block`}>
             <button className={`
                     ${borderWidth && borderWidthClasses[borderWidth]} 
                     ${borderColor}
@@ -82,6 +85,7 @@ export default function CallAction({
                     ${hoverTextColor}
                     ${transition && "transition duration-200"}
                     ${paddingYClasses[paddingY]}
+                    ${useMobile ? "w-full" : "w-auto"}
                     px-4 transform flex items-center justify-center gap-2 `}>
                 {icon && iconPosition === "left" ? (
                     <IconComponent width="20px" height="20px" fill="currentColor"/>

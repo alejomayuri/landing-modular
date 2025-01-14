@@ -61,7 +61,7 @@ export default function HeaderWrapper({
     return (
         <header className={`
             ${backgroundClass} ${paddingYClasses[paddingY]} ${paddingXClasses[paddingX]} ${positionClass} ${shadowClass}
-            transition-colors duration-300 px-3
+            transition-colors duration-300 px-4
         `}>
             <div className={`mx-auto flex items-center ${alignClasses[aligne]}`}>
                 {children}

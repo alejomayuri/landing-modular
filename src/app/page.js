@@ -1,10 +1,10 @@
 import Header from "./components/header/Header";
-import { defaultData, demo_first, demo_second, demo_third, demo_fourth } from "./mockups";
+import { defaultData, demo_first, demo_second, demo_third, demo_fourth, demo_fifth } from "./mockups";
 
 export default function Home() {
   return (
     <> 
-      <Header data={demo_fourth?.header} />
+      <Header data={demo_fifth?.header} />
       <main>
         {/* Contenido de prueba para scroll */}
         <section className="h-screen bg-gray-100 bg-gradient-to-r from-blue-500 to-purple-500"></section>
