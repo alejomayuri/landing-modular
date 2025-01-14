@@ -57,7 +57,7 @@ export default function MenuMobile({
 
             
             {isMenuOpen && (<div
-                className={`fixed inset-0 ${menuBgColor} px-10 py-28 z-50 flex flex-col text-white transition-opacity duration-300 ${animation}`}
+                className={`fixed inset-0 ${menuBgColor} px-10 py-20 z-50 flex flex-col text-white transition-opacity duration-300 ${animation}`}
             >
                 <button
                     className="absolute top-5 right-5 text-2xl p-2 rounded-full"
@@ -65,7 +65,7 @@ export default function MenuMobile({
                 >
                     <CloseIcon className="w-5 h-5" fill={color} />
                 </button>
-                <nav className="flex flex-col h-1/2 text-xl">
+                <nav className="flex flex-col h-4/6 text-xl">
                     {navItems.map((item, index) => (
                         <a key={index} href={item.href} className={`mt-auto hover:underline font-bold ${fontSizeClasses[fontSize]} ${itemsColor}`}>
                             {item.text}
