@@ -73,7 +73,7 @@ export default function MenuMobile({
                 </button>
                 <nav className={`flex flex-col ${navHeightClasses[navHeight]} text-xl`}>
                     {navItems.map((item, index) => (
-                        <a key={index} href={item.href} className={`mt-auto hover:underline font-bold ${fontSizeClasses[fontSize]} ${itemsColor}`}>
+                        <a onClick={toggleMenu} key={index} href={item.href} className={`mt-auto hover:underline font-bold ${fontSizeClasses[fontSize]} ${itemsColor}`}>
                             {item.text}
                         </a>
                     ))}

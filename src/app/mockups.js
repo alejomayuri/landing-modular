@@ -285,7 +285,7 @@ export const demo_fifth = {
             paddingX: "low",
             bgColor: "bg-[#fff]",
             scrolledBgColor: null,
-            isFixed: false,
+            isFixed: true,
             shadow: true
         },
         logo: {
@@ -362,6 +362,11 @@ export const demo_fifth = {
             color: "#383c43",
             navHeight: "big",
             itemsColor: "text-gray-900",
+        }
+    },
+    mainBanner: {
+        global: {
+            bgImage: "/banner1.png",
         }
     }
 };
