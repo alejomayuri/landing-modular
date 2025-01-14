@@ -65,9 +65,9 @@ export default function MenuMobile({
                 >
                     <CloseIcon className="w-5 h-5" fill={color} />
                 </button>
-                <nav className="flex flex-col space-y-12 text-xl">
+                <nav className="flex flex-col h-1/2 text-xl">
                     {navItems.map((item, index) => (
-                        <a key={index} href={item.href} className={`hover:underline font-bold ${fontSizeClasses[fontSize]} ${itemsColor}`}>
+                        <a key={index} href={item.href} className={`mt-auto hover:underline font-bold ${fontSizeClasses[fontSize]} ${itemsColor}`}>
                             {item.text}
                         </a>
                     ))}
