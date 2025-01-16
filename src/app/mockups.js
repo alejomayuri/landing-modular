@@ -143,6 +143,18 @@ export const demo_second = {
                 paddingY: "low"
             }
         ],
+        // menuMobile: {
+        //     color: "#fff",
+        //     itemsColor: "text-white",
+        //     menuBgColor: "bg-[#1F8061]"
+        // }
+    },
+    mainBanner: {
+        global: {
+            bgImage: "/banner3.jpg",
+            bgColor: "bg-[#0C1633]",
+            marginTop: "none",
+        }
     }
 };
 
@@ -159,7 +171,7 @@ export const demo_third = {
             shadow: true
         },
         logo: {
-            logoSlug: "/pataki.png",
+            logoSlug: "/pataki_white.png",
             logoWidth: 120,
             logoHeight: 120
         },
@@ -219,6 +231,22 @@ export const demo_third = {
             itemsColor: "text-white",
             menuBgColor: "bg-[#121F3D]"
         }
+    },
+    mainBanner: {
+        type: 1,
+        global: {
+            // bgImage: "/banner3.jpg",
+            bgColor: "bg-[#0C1633]",
+            marginTop: "none",
+        },
+        title: {
+            text: "Lorem ipsum dolor sit amet",
+            color: "text-white",
+            fontSize: "big",
+            fontFamily: "barlow",
+            textAlign: "center",
+            marginTop: "low"
+        },
     }
 };
 
@@ -229,13 +257,13 @@ export const demo_fourth = {
             aligne: "left",
             paddingY: "low",
             paddingX: "normal",
-            bgColor: "bg-[#fff]",
+            bgColor: "bg-transparent",
             scrolledBgColor: null,
             isFixed: false,
-            shadow: true
+            shadow: false
         },
         logo: {
-            logoSlug: "/pataki.png",
+            logoSlug: "/pataki_white.png",
             logoWidth: 90,
             logoHeight: 90
         },
@@ -248,7 +276,7 @@ export const demo_fourth = {
                 { text: "Shop", href: "#blog" },
                 { text: "We, Robot", href: "#blog" },
             ],
-            navItemsColor: "text-[#383c43]",
+            navItemsColor: "text-white",
             hoverColor: null,
             hoverUnderline: false,
             hoverTransform: null,
@@ -265,13 +293,20 @@ export const demo_fourth = {
                 { icon: "person", href: "#" }
             ],
             spaceBetweenItems: "normal",
-            color: "text-gray-800",
-            hoverColor: "hover:text-red-600",
+            color: "text-white",
+            hoverColor: null,
             size: "small"
         },
         menuMobile: {
             color: "#383c43",
             itemsColor: "text-gray-900",
+        }
+    },
+    mainBanner: {
+        global: {
+            bgImage: "/banner2.jpg",
+            bgColor: "bg-[#0C1633]",
+            marginTop: "none",
         }
     }
 };
@@ -365,8 +400,19 @@ export const demo_fifth = {
         }
     },
     mainBanner: {
+        type: 1,
         global: {
             bgImage: "/banner1.png",
-        }
+            bgColor: "bg-[#0C1633]",
+            marginTop: "low",
+        },
+        title: {
+            text: "Lorem ipsum dolor sit amet",
+            color: "text-white",
+            fontSize: "big",
+            fontFamily: "barlow",
+            textAlign: "center",
+            marginTop: "low"
+        },
     }
 };
