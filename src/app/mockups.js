@@ -239,15 +239,22 @@ export const demo_third = {
             bgColor: "bg-[#0C1633]",
             marginTop: "none",
         },
-        title: {
-            text: "Lorem ipsum dolor sit amet",
-            color: "text-white",
-            fontSize: "big",
-            fontFamily: "barlow",
-            textAlign: "center",
-            marginTop: "low"
+        textBlock: {
+            global: {
+                orientation: "left",
+            },
+            title: {
+                text: "Decide tu próximo paso en la industria tecnológica",
+                color: "text-white",
+                width: "normal",
+                fontSize: "normal",
+                fontFamily: "barlow"
+            },
+            textContent: {
+                text: "Con este test vas a descubrir el área profesional que más se acerca a tu perfil e intereses. Refuerza tus habilidades o encuentra tu nueva vocación.",
+            }
         },
-    }
+    },
 };
 
 export const demo_fourth = {
@@ -406,13 +413,20 @@ export const demo_fifth = {
             bgColor: "bg-[#0C1633]",
             marginTop: "low",
         },
-        title: {
-            text: "Lorem ipsum dolor sit amet",
-            color: "text-white",
-            fontSize: "big",
-            fontFamily: "barlow",
-            textAlign: "center",
-            marginTop: "low"
+        textBlock: {
+            global: {
+                orientation: "left",
+            },
+            title: {
+                text: "Decide tu próximo paso en la industria tecnológica",
+                color: "text-white",
+                width: "normal",
+                fontSize: "normal",
+                fontFamily: "barlow"
+            },
+            textContent: {
+                text: "Con este test vas a descubrir el área profesional que más se acerca a tu perfil e intereses. Refuerza tus habilidades o encuentra tu nueva vocación.",
+            }
         },
     }
 };

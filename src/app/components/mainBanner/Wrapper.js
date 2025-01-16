@@ -4,13 +4,21 @@ export default function Wrapper({
     bgColor,
     marginTop = "normal",
 }) {
-    console.log("bgImage", bgImage)
+    
     const marginTopClasses = {
         none: "",
         low: "mt-[69px]",
         normal: "mt-[93px]",
         high: "mt-[157px]",
     };
+
+    const bannerHeight = {
+        none: "0px",
+        low: "69px",
+        normal: "93px",
+        high: "157px",
+    };
+
     return (
         <section
             className={`${bgColor} relative h-screen flex items-center justify-center ${marginTopClasses[marginTop]}`}
@@ -18,6 +26,7 @@ export default function Wrapper({
                 backgroundImage: `url(${bgImage})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
+                height: `calc(100vh - ${bannerHeight[marginTop]})`,
             }}
         >
             {children}

@@ -1,4 +1,5 @@
 import Wrapper from "./Wrapper";
+import TextBlock from "./TextBlock";
 
 export default function MainBanner({
     data,
@@ -8,7 +9,8 @@ export default function MainBanner({
         return null; // Devuelve null si no hay datos
     }
 
-    const { type, global, title } = data;
+    const { type, global, textBlock } = data;
+    const { global: textBlockGlobal, title, textContent } = textBlock || {}
 
     const {
         bgImage,
@@ -18,7 +20,14 @@ export default function MainBanner({
 
     // Componente Title
     const showTitle = title && Object.keys(title).length > 0 ? (
-        <h1 className="text-white text-4xl font-bold">{title.text}</h1>
+        <TextBlock
+            title={title.text}
+            fontSize={title.fontSize}
+            width={title.width}
+            orientation={textBlockGlobal.orientation}
+            titleColor={title.color}
+            textContent={textContent.text}
+        />
     ) : null
 
     // Determinar contenido según el tipo

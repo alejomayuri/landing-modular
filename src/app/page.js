@@ -3,7 +3,7 @@ import MainBanner from "./components/mainBanner/MainBanner";
 import { defaultData, demo_first, demo_second, demo_third, demo_fourth, demo_fifth } from "./mockups";
 
 export default function Home() {
-  const data = demo_fifth;
+  const data = demo_third;
 
   return (
     <> 
