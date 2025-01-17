@@ -10,7 +10,7 @@ export default function MainBanner({
     }
 
     const { type, global, textBlock } = data;
-    const { global: textBlockGlobal, title, textContent } = textBlock || {}
+    const { global: textBlockGlobal, title, textContent, callAction } = textBlock || {}
 
     const {
         bgImage,
@@ -22,11 +22,16 @@ export default function MainBanner({
     const showTitle = title && Object.keys(title).length > 0 ? (
         <TextBlock
             title={title.text}
-            fontSize={title.fontSize}
-            width={title.width}
+            textContent={textContent.text}
+            titleFontSize={title.fontSize}
+            textFontSize={textContent.fontSize}
+            titleFontFamily={title.fontFamily}
+            textFontFamily={textContent.fontFamily}
+            width={textBlockGlobal.width}
             orientation={textBlockGlobal.orientation}
             titleColor={title.color}
-            textContent={textContent.text}
+            textColor={textContent.color}
+            callAction={callAction}
         />
     ) : null
 

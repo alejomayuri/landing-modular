@@ -23,7 +23,8 @@ export default function CallAction({
     hoverTextColor = null, // Color de texto al pasar el mouse
     transition = false, // Transición al pasar el mouse
     paddingY = "low", // Padding Y normal por defecto
-    useMobile = false
+    useMobile = false,
+    onClick
 }) {
     if(!text || text === "") {
         return null;
@@ -73,20 +74,21 @@ export default function CallAction({
         <Link href={href} className={`${
             useMobile ? "flex w-full" : "hidden"
         } lg:block`}>
-            <button className={`
-                    ${borderWidth && borderWidthClasses[borderWidth]} 
-                    ${borderColor}
-                    ${borderRadius && borderRadiusClasses[borderRadius]}
-                    ${hoverBorderColor}
-                    ${fontFamilyClasses[fontFamily]}
-                    ${backgroundColor}
-                    ${hoverBackgroundColor}
-                    ${textColor}
-                    ${hoverTextColor}
-                    ${transition && "transition duration-200"}
-                    ${paddingYClasses[paddingY]}
-                    ${useMobile ? "w-full" : "w-auto"}
-                    px-4 transform flex items-center justify-center gap-2 `}>
+            <button onClick={useMobile ? onClick : null} className={`
+                ${borderWidth && borderWidthClasses[borderWidth]} 
+                ${borderColor}
+                ${borderRadius && borderRadiusClasses[borderRadius]}
+                ${hoverBorderColor}
+                ${fontFamilyClasses[fontFamily]}
+                ${backgroundColor}
+                ${hoverBackgroundColor}
+                ${textColor}
+                ${hoverTextColor}
+                ${transition && "transition duration-200"}
+                ${paddingYClasses[paddingY]}
+                ${useMobile ? "w-full" : "w-auto"}
+                px-4 transform flex items-center justify-center gap-2 `
+            }>
                 {icon && iconPosition === "left" ? (
                     <IconComponent width="20px" height="20px" fill="currentColor"/>
                 ) : null}

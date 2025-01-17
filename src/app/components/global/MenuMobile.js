@@ -100,6 +100,7 @@ export default function MenuMobile({
                 
                         return (
                             <CallAction
+                                onClick={toggleMenu}
                                 key={index}
                                 text={text}
                                 href={href}

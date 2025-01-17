@@ -172,8 +172,8 @@ export const demo_third = {
         },
         logo: {
             logoSlug: "/pataki_white.png",
-            logoWidth: 120,
-            logoHeight: 120
+            logoWidth: 80,
+            logoHeight: 80
         },
         navbar: {
             navItems: [
@@ -242,17 +242,36 @@ export const demo_third = {
         textBlock: {
             global: {
                 orientation: "left",
+                width: "normal",
             },
             title: {
-                text: "Decide tu próximo paso en la industria tecnológica",
+                text: "DECIDE TU PRÓXIMO PASO EN LA INDUSTRIA TECNOLÓGICA",
                 color: "text-white",
-                width: "normal",
-                fontSize: "normal",
-                fontFamily: "barlow"
+                fontSize: "small",
+                fontFamily: "oswald"
             },
             textContent: {
                 text: "Con este test vas a descubrir el área profesional que más se acerca a tu perfil e intereses. Refuerza tus habilidades o encuentra tu nueva vocación.",
-            }
+                color: "text-[#8da2c0]",
+                fontSize: "small",
+                fontFamily: "barlow"
+            },
+            callAction: {
+                text: "EMPRESAS",
+                href: "#iniciar-sesion",
+                borderWidth: "normal",
+                borderRadius: "big",
+                borderColor: "border-[#98CA3F]",
+                hoverBorderColor: "hover:border-[#C1DF8B]",
+                backgroundColor: null,
+                hoverBackgroundColor: null,
+                textColor: "text-[#98CA3F]",
+                hoverTextColor: "hover:text-[#C1DF8B]",
+                transition: true,
+                fontFamily: "oswald",
+                icon: "internet",
+                iconPosition: "left",
+            },
         },
     },
 };
@@ -416,16 +435,17 @@ export const demo_fifth = {
         textBlock: {
             global: {
                 orientation: "left",
+                width: "normal",
             },
             title: {
                 text: "Decide tu próximo paso en la industria tecnológica",
                 color: "text-white",
-                width: "normal",
                 fontSize: "normal",
                 fontFamily: "barlow"
             },
             textContent: {
                 text: "Con este test vas a descubrir el área profesional que más se acerca a tu perfil e intereses. Refuerza tus habilidades o encuentra tu nueva vocación.",
+                color: "text-[#8da2c0]",
             }
         },
     }

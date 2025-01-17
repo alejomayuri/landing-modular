@@ -1,23 +1,34 @@
 import Link from "next/link";
 import Image from "next/image";
+import CallAction from "../global/CallAction";
 
 export default function TextBlock({ 
     title,
     textContent,
-    fontSize = "normal",
+    titleFontSize = "normal",
+    textFontSize = "normal",
     width = "normal",
     orientation = "center",
-    fontFamily = "oswald",
-    titleColor = "text-white"
+    titleFontFamily = "oswald",
+    textFontFamily = "oswald",
+    titleColor = "text-white",
+    textColor = "text-white",
+    callAction
 }) {
     if (!title && !textContent) {
         return null;
     }
 
-    const fontSizeClasses = {
-        small: "text-6xl mb-4",
+    const titleFontSizeClasses = {
+        small: "text-6xl mb-5",
         normal: "text-7xl mb-6",
         big: "text-8xl mb-8"
+    };
+
+    const textFontSizeClasses = {
+        small: "text-lg",
+        normal: "text-xl",
+        big: "text-2xl"
     };
 
     const orientationClasses = {
@@ -47,13 +58,31 @@ export default function TextBlock({
                 ${widthClasses[width]}
                 p-4
             `}>
-            <h1 className={`
-                text-white ${fontSizeClasses[fontSize]} ${titleColor} font-bold ${fontFamilyClasses[fontFamily]}`} style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.5)" }}>
+            <h1 className={`${titleFontSizeClasses[titleFontSize]} ${titleColor} font-bold ${fontFamilyClasses[titleFontFamily]}`} style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.5)" }}>
                 {title}
             </h1>
-            <p>
+            <p className={`${textColor} ${textFontSizeClasses[textFontSize]} ${fontFamilyClasses[textFontFamily]}`}>
                 {textContent}
             </p>
+            <CallAction
+                key={callAction.index}
+                text={callAction.text}
+                href={callAction.href}
+                borderWidth={callAction.borderWidth}
+                borderColor={callAction.borderColor}
+                borderRadius={callAction.borderRadius}
+                fontFamily={callAction.fontFamily}
+                hoverBorderColor={callAction.hoverBorderColor}
+                backgroundColor={callAction.backgroundColor}
+                hoverBackgroundColor={callAction.hoverBackgroundColor}
+                textColor={callAction.textColor}
+                hoverTextColor={callAction.hoverTextColor}
+                transition={callAction.transition}
+                paddingY={callAction.paddingY}
+                icon={callAction.icon}
+                iconPosition={callAction.iconPosition}
+                useMobile={true}
+            />
         </div>
     );
 }
