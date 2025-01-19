@@ -12,7 +12,8 @@ export default function IconBox({
     color = "text-gray-600", // Color del ícono
     hoverColor = null, // Color del ícono al pasar el mouse
     size = "normal",
-    useMobile = false
+    useMobile = false,
+    onClick
 }) {
     if (!icons) {
         return null;
@@ -60,6 +61,7 @@ export default function IconBox({
                         href={iconData.href}
                         aria-label={`Enlace a ${iconData.icon}`}
                         className=" transition-opacity"
+                        onClick={onClick}
                     >
                         <IconComponent className={`${color} ${hoverColor} ${sizeClasses[size]} transition duration-200`} fill="currentColor" />
                     </Link>

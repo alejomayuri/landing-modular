@@ -79,8 +79,10 @@ export default function Header({ data }) {
                     transition,
                     fontFamily,
                     paddingY,
+                    width,
                     icon,
                     iconPosition,
+                    showInMobile
                 } = item;
         
                 return (
@@ -98,9 +100,11 @@ export default function Header({ data }) {
                         textColor={textColor}
                         hoverTextColor={hoverTextColor}
                         transition={transition}
+                        width={width}
                         paddingY={paddingY}
                         icon={icon}
                         iconPosition={iconPosition}
+                        showInMobile={showInMobile}
                     />
                 );
             })}
@@ -152,11 +156,11 @@ export default function Header({ data }) {
         content = (
             <>
                 {showLogo}
-                <div className="flex gap-10 items-center">
+                <div className="flex gap-5 lg:gap-10 items-center">
                     {showNavbar}
                     {showCallAction}
+                    {showMenuMobile}
                 </div>
-                {showMenuMobile}
             </>
         );
     } else if (type === 6) {
@@ -173,7 +177,7 @@ export default function Header({ data }) {
             <>  <div>
                     {showLogo}
                 </div>
-                <div className="flex gap-10 items-center">
+                <div className="flex gap-5 lg:gap-10 items-center">
                     {showNavbar}
                     {showCallAction}
                     {showIcons}

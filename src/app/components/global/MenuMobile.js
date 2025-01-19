@@ -124,6 +124,7 @@ export default function MenuMobile({
                 </div>}
                 {icons && <div className="mt-auto">
                     <IconBox
+                        onClick={toggleMenu}
                         icons={icons.icons}
                         spaceBetweenItems={icons.spaceBetweenItems}
                         color={icons.color}

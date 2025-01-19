@@ -207,6 +207,8 @@ export const demo_third = {
                 transition: true,
                 fontFamily: "oswald",
                 icon: "internet",
+                showInMobile: true,
+                width: "auto",
                 iconPosition: "left",
             },
             {
@@ -222,6 +224,7 @@ export const demo_third = {
                 hoverTextColor: null,
                 transition: true,
                 fontFamily: "oswald",
+                width: "auto",
                 icon: null,
                 iconPosition: null,
             }
@@ -238,6 +241,7 @@ export const demo_third = {
             // bgImage: "/banner3.jpg",
             bgColor: "bg-[#0C1633]",
             marginTop: "none",
+            height: "full"
         },
         textBlock: {
             global: {
@@ -265,6 +269,8 @@ export const demo_third = {
                 hoverBorderColor: "hover:border-[#C1DF8B]",
                 backgroundColor: null,
                 hoverBackgroundColor: null,
+                showInMobile: true,
+                width: "full",
                 textColor: "text-[#98CA3F]",
                 hoverTextColor: "hover:text-[#C1DF8B]",
                 transition: true,
@@ -389,6 +395,8 @@ export const demo_fifth = {
                 fontFamily: "oswald",
                 icon: "internet",
                 iconPosition: "left",
+                showInMobile: true,
+                paddingY: "low"
             },
             {
                 text: "LOG IN",
@@ -405,6 +413,7 @@ export const demo_fifth = {
                 fontFamily: "oswald",
                 icon: null,
                 iconPosition: null,
+                paddingY: "low"
             }
         ],
         icons : {
@@ -431,6 +440,7 @@ export const demo_fifth = {
             bgImage: "/banner1.png",
             bgColor: "bg-[#0C1633]",
             marginTop: "low",
+            height: "full"
         },
         textBlock: {
             global: {
@@ -438,15 +448,41 @@ export const demo_fifth = {
                 width: "normal",
             },
             title: {
-                text: "Decide tu próximo paso en la industria tecnológica",
+                text: "DECIDE TU PRÓXIMO PASO EN LA INDUSTRIA TECNOLÓGICA",
                 color: "text-white",
-                fontSize: "normal",
+                fontSize: "small",
+                fontFamily: "oswald"
+            },
+            subtitle: {
+                text: "PATAKI LANDING PAGE",
+                color: "text-[#8da2c0]",
+                fontSize: "small",
                 fontFamily: "barlow"
             },
             textContent: {
                 text: "Con este test vas a descubrir el área profesional que más se acerca a tu perfil e intereses. Refuerza tus habilidades o encuentra tu nueva vocación.",
-                color: "text-[#8da2c0]",
-            }
+                color: "text-white",
+                fontSize: "small",
+                fontFamily: "barlow"
+            },
+            callAction: {
+                text: "EMPRESAS",
+                href: "#iniciar-sesion",
+                borderWidth: "normal",
+                borderRadius: "big",
+                borderColor: "border-white",
+                hoverBorderColor: null,
+                backgroundColor: null,
+                hoverBackgroundColor: null,
+                showInMobile: true,
+                width: "normal",
+                textColor: "text-white",
+                hoverTextColor: "hover:text-white",
+                transition: true,
+                fontFamily: "oswald",
+                icon: "internet",
+                iconPosition: "left",
+            },
         },
     }
 };

@@ -3,7 +3,15 @@ export default function Wrapper({
     bgImage,
     bgColor,
     marginTop = "normal",
+    height = "normal",
 }) {
+
+    const heightClasses = {
+        low: "60vh",
+        normal: "70vh",
+        high: "80vh",
+        full: "100vh",
+    };
     
     const marginTopClasses = {
         none: "",
@@ -21,12 +29,12 @@ export default function Wrapper({
 
     return (
         <section
-            className={`${bgColor} relative h-screen flex items-center justify-center ${marginTopClasses[marginTop]}`}
+            className={`${bgColor} relative ${heightClasses[height]} flex items-center justify-center ${marginTopClasses[marginTop]}`}
             style={{
                 backgroundImage: `url(${bgImage})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
-                height: `calc(100vh - ${bannerHeight[marginTop]})`,
+                height: `calc(${heightClasses[height]} - ${bannerHeight[marginTop]})`,
             }}
         >
             {children}

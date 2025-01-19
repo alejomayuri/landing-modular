@@ -24,9 +24,11 @@ export default function CallAction({
     transition = false, // Transición al pasar el mouse
     paddingY = "low", // Padding Y normal por defecto
     useMobile = false,
-    onClick
+    onClick,
+    showInMobile = false,
+    width = "auto"
 }) {
-    if(!text || text === "") {
+    if(!text || text === "") {http://localhost:3000/#sobre-nosotros
         return null;
     }
 
@@ -69,12 +71,20 @@ export default function CallAction({
         barlow: "font-barlow",
         oswald: "font-oswald"
     };
+
+    const widthClasses = {
+        auto: "w-auto",
+        small: "w-[150px]",
+        normal: "w-[200px]",
+        big: "w-[300px]",
+        full: "w-full"
+    };
     
     return (
         <Link href={href} className={`${
-            useMobile ? "flex w-full" : "hidden"
+            useMobile ? "flex w-full" : `${showInMobile ? `block ${widthClasses[width]}` : "hidden"}`
         } lg:block`}>
-            <button onClick={useMobile ? onClick : null} className={`
+            <button onClick={useMobile ? onClick : null} className={` 
                 ${borderWidth && borderWidthClasses[borderWidth]} 
                 ${borderColor}
                 ${borderRadius && borderRadiusClasses[borderRadius]}
@@ -86,7 +96,7 @@ export default function CallAction({
                 ${hoverTextColor}
                 ${transition && "transition duration-200"}
                 ${paddingYClasses[paddingY]}
-                ${useMobile ? "w-full" : "w-auto"}
+                ${useMobile ? "w-full" : `${widthClasses[width]}`}
                 px-4 transform flex items-center justify-center gap-2 `
             }>
                 {icon && iconPosition === "left" ? (

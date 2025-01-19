@@ -10,12 +10,13 @@ export default function MainBanner({
     }
 
     const { type, global, textBlock } = data;
-    const { global: textBlockGlobal, title, textContent, callAction } = textBlock || {}
+    const { global: textBlockGlobal, title, subtitle, textContent, callAction } = textBlock || {}
 
     const {
         bgImage,
         marginTop,
-        bgColor
+        bgColor,
+        height
     } = global || {}
 
     // Componente Title
@@ -32,6 +33,7 @@ export default function MainBanner({
             titleColor={title.color}
             textColor={textContent.color}
             callAction={callAction}
+            subtitle={subtitle.text}
         />
     ) : null
 
@@ -50,6 +52,7 @@ export default function MainBanner({
             bgImage={bgImage}
             marginTop={marginTop}
             bgColor={bgColor}
+            height={height}
         >
             {content}
         </Wrapper>
