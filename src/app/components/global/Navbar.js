@@ -1,4 +1,4 @@
-// import { geistSans, robotoMedium } from "@/app/layout";
+import { fontFamilyClasses } from "../ui/fonts/familyClasses";
 
 export default function Navbar({
     navItems, // Elementos de navegación
@@ -28,16 +28,6 @@ export default function Navbar({
         small: "space-x-2",
         normal: "space-x-4",
         big: "space-x-6"
-    };
-
-    // Clases de familia de fuente
-    const fontFamilyClasses = {
-        sans: "font-sans",
-        serif: "font-serif",
-        mono: "font-mono",
-        robotoMedium: "font-robotoMedium",
-        barlow: "font-barlow",
-        oswald: "font-oswald"
     };
 
     // Clases de transformación al pasar el mouse

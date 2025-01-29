@@ -22,18 +22,21 @@ export default function MainBanner({
     // Componente Title
     const showTitle = title && Object.keys(title).length > 0 ? (
         <TextBlock
-            title={title.text}
-            textContent={textContent.text}
-            titleFontSize={title.fontSize}
-            textFontSize={textContent.fontSize}
-            titleFontFamily={title.fontFamily}
-            textFontFamily={textContent.fontFamily}
-            width={textBlockGlobal.width}
-            orientation={textBlockGlobal.orientation}
-            titleColor={title.color}
-            textColor={textContent.color}
+            title={title?.text}
+            textContent={textContent?.text}
+            titleFontSize={title?.fontSize}
+            textFontSize={textContent?.fontSize}
+            titleFontFamily={title?.fontFamily}
+            textFontFamily={textContent?.fontFamily}
+            width={textBlockGlobal?.width}
+            orientation={textBlockGlobal?.orientation}
+            titleColor={title?.color}
+            textColor={textContent?.color}
             callAction={callAction}
-            subtitle={subtitle.text}
+            subtitleText={subtitle?.text}
+            subtitleFontSize={subtitle?.fontSize}
+            subtitleColor={subtitle?.color}
+            subtitleFontFamily={subtitle?.fontFamily}
         />
     ) : null
 

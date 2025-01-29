@@ -1,6 +1,5 @@
-import Link from "next/link";
-import Image from "next/image";
 import CallAction from "../global/CallAction";
+import { fontFamilyClasses } from "../ui/fonts/familyClasses";
 
 export default function TextBlock({ 
     title,
@@ -10,12 +9,14 @@ export default function TextBlock({
     subtitleFontSize = "small",
     width = "normal",
     orientation = "center",
-    titleFontFamily = "oswald",
-    textFontFamily = "oswald",
+    titleFontFamily = "barlow",
+    textFontFamily = "barlow",
     titleColor = "text-white",
     textColor = "text-white",
     callAction,
-    subtitle
+    subtitleText,
+    subtitleColor = "text-white",
+    subtitleFontFamily = "barlow"
 }) {
     if (!title && !textContent) {
         return null;
@@ -53,17 +54,8 @@ export default function TextBlock({
 
     const widthClasses = {
         small: "w-[300px]",
-        normal: "w-[700px]",
+        normal: "w-[670px]",
         big: "w-[1024px]"
-    };
-
-    const fontFamilyClasses = {
-        sans: "font-sans",
-        serif: "font-serif",
-        mono: "font-mono",
-        robotoMedium: "font-robotoMedium",
-        barlow: "font-barlow",
-        oswald: "font-oswald"
     };
 
     return (
@@ -74,9 +66,9 @@ export default function TextBlock({
                 ${widthClasses[width]}
                 p-4
             `}>
-            {subtitle && (
-                <h3 className={`${subtitleFontSizeClasses[subtitleFontSize]}`} style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.5)" }}>
-                    {subtitle}
+            {subtitleText && (
+                <h3 className={`${subtitleFontSizeClasses[subtitleFontSize]} ${subtitleColor} ${fontFamilyClasses[subtitleFontFamily]}`} style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.5)" }}>
+                    {subtitleText}
                 </h3>
             )}
             <h1 className={`${titleFontSizeClasses[titleFontSize]} ${titleColor} font-bold ${fontFamilyClasses[titleFontFamily]}`} style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.5)" }}>
@@ -106,7 +98,6 @@ export default function TextBlock({
                         icon={callAction.icon}
                         showInMobile={callAction.showInMobile}
                         iconPosition={callAction.iconPosition}
-                        // useMobile={true}
                     />
                 </div>
             )}

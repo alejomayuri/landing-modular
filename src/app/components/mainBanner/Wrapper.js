@@ -4,6 +4,7 @@ export default function Wrapper({
     bgColor,
     marginTop = "normal",
     height = "normal",
+    orientation = "top",
 }) {
 
     const heightClasses = {
@@ -27,6 +28,12 @@ export default function Wrapper({
         high: "157px",
     };
 
+    const orientationClasses = {
+        top: "top-[200px]",
+        center: "top-1/2 transform -translate-y-1/2",
+        bottom: "bottom-[100px]",
+    }
+
     return (
         <section
             className={`${bgColor} relative ${heightClasses[height]} flex items-center justify-center ${marginTopClasses[marginTop]}`}
@@ -37,7 +44,9 @@ export default function Wrapper({
                 height: `calc(${heightClasses[height]} - ${bannerHeight[marginTop]})`,
             }}
         >
-            {children}
+            <div className={`absolute  ${orientationClasses[orientation]}`}>
+                {children}
+            </div>
         </section>
     );
 }

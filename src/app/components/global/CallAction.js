@@ -1,10 +1,6 @@
 import Link from "next/link";
-import IgIcon from "../ui/icons/ig";
-import FbIcon from "../ui/icons/fb";
-import InternetIcon from "../ui/icons/internet";
-import QuestionIcon from "../ui/icons/question";
-import PersonIcon from "../ui/icons/person";
-import XIcon from "../ui/icons/x";
+import { iconComponents } from "../ui/icons/iconComponents";
+import { fontFamilyClasses } from "../ui/fonts/familyClasses";
 
 export default function CallAction({ 
     text, 
@@ -28,18 +24,9 @@ export default function CallAction({
     showInMobile = false,
     width = "auto"
 }) {
-    if(!text || text === "") {http://localhost:3000/#sobre-nosotros
+    if(!text || text === "") {
         return null;
     }
-
-    const iconComponents = {
-        ig: IgIcon,
-        fb: FbIcon,
-        internet: InternetIcon,
-        question: QuestionIcon,
-        person: PersonIcon,
-        x: XIcon
-    };
 
     const IconComponent = iconComponents[icon];
 
@@ -60,16 +47,6 @@ export default function CallAction({
         high: "py-4",
         normal: "py-3",
         low: "py-2",
-    };
-
-    // Clases de familia de fuente
-    const fontFamilyClasses = {
-        sans: "font-sans",
-        serif: "font-serif",
-        mono: "font-mono",
-        robotoMedium: "font-robotoMedium",
-        barlow: "font-barlow",
-        oswald: "font-oswald"
     };
 
     const widthClasses = {
@@ -97,7 +74,7 @@ export default function CallAction({
                 ${transition && "transition duration-200"}
                 ${paddingYClasses[paddingY]}
                 ${useMobile ? "w-full" : `${widthClasses[width]}`}
-                px-4 transform flex items-center justify-center gap-2 `
+                px-4 transform flex items-center justify-center gap-2`
             }>
                 {icon && iconPosition === "left" ? (
                     <IconComponent width="20px" height="20px" fill="currentColor"/>

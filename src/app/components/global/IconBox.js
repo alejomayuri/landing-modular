@@ -1,10 +1,5 @@
 import Link from "next/link";
-import IgIcon from "../ui/icons/ig";
-import FbIcon from "../ui/icons/fb";
-import InternetIcon from "../ui/icons/internet";
-import QuestionIcon from "../ui/icons/question";
-import PersonIcon from "../ui/icons/person";
-import XIcon from "../ui/icons/x";
+import { iconComponents } from "../ui/icons/iconComponents";
 
 export default function IconBox({ 
     icons, 
@@ -18,16 +13,6 @@ export default function IconBox({
     if (!icons) {
         return null;
     }
-
-    // Diccionario de íconos para facilitar el acceso
-    const iconComponents = {
-        ig: IgIcon,
-        fb: FbIcon,
-        internet: InternetIcon,
-        question: QuestionIcon,
-        person: PersonIcon,
-        x: XIcon
-    };
 
     // Clases de espacio entre elementos
     const spaceBetweenItemsClasses = {
