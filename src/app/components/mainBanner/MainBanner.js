@@ -16,7 +16,10 @@ export default function MainBanner({
         bgImage,
         marginTop,
         bgColor,
-        height
+        height,
+        containerWidth,
+        y_orientation,
+        x_orientation,
     } = global || {}
 
     // Componente Title
@@ -56,6 +59,9 @@ export default function MainBanner({
             marginTop={marginTop}
             bgColor={bgColor}
             height={height}
+            containerWidth={containerWidth}
+            y_orientation={y_orientation}
+            x_orientation={x_orientation}
         >
             {content}
         </Wrapper>

@@ -5,6 +5,7 @@ export default function HeaderWrapper({
     children, // Contenido del header
     paddingY = "normal", // Padding Y normal por defecto
     paddingX = "normal", // Padding X normal por defecto
+    containerWidth = "full", // Ancho de contenedor grande por defecto
     bgColor = "bg-white", // Fondo inicial transparente
     scrolledBgColor = null, // Fondo al hacer scroll
     isFixed = true, // Position fixed por defecto
@@ -43,6 +44,14 @@ export default function HeaderWrapper({
         low: "lg:px-6",
     };
 
+    // Clases de ancho de contenedor
+    const containerWidthClasses = {
+        small: "lg:max-w-[1124px]",
+        normal: "lg:max-w-[1280px]",
+        big: "lg:max-w-[1440px]",
+        full: "lg:w-full",
+    };
+
     // Clases de alineación
     const alignClasses = {
         left: "justify-between",
@@ -63,7 +72,7 @@ export default function HeaderWrapper({
             ${backgroundClass} ${paddingYClasses[paddingY]} ${paddingXClasses[paddingX]} ${positionClass} ${shadowClass}
             transition-colors duration-300 px-4
         `}>
-            <div className={`mx-auto flex items-center ${alignClasses[aligne]}`}>
+            <div className={`mx-auto flex items-center ${alignClasses[aligne]} ${containerWidthClasses[containerWidth]}`}>
                 {children}
             </div>
         </header>

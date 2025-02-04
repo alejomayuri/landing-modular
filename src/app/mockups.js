@@ -241,7 +241,8 @@ export const demo_third = {
             // bgImage: "/banner3.jpg",
             bgColor: "bg-[#0C1633]",
             marginTop: "none",
-            height: "full"
+            height: "full",
+            y_orientation: "top"
         },
         textBlock: {
             global: {
@@ -349,7 +350,8 @@ export const demo_fifth = {
         global: {
             aligne: "left",
             paddingY: "low",
-            paddingX: "low",
+            paddingX: "high",
+            containerWidth: "normal",
             bgColor: "bg-[#fff]",
             scrolledBgColor: null,
             isFixed: true,
@@ -440,7 +442,9 @@ export const demo_fifth = {
             bgImage: "/banner1.png",
             bgColor: "bg-[#0C1633]",
             marginTop: "low",
-            height: "full"
+            height: "full",
+            y_orientation: "center",
+            x_orientation: "left"
         },
         textBlock: {
             global: {
@@ -482,6 +486,266 @@ export const demo_fifth = {
                 fontFamily: "oswald",
                 icon: "internet",
                 iconPosition: "left",
+            },
+        },
+    }
+};
+
+export const demo_six = {
+    header: {
+        type: 4,
+        global: {
+            aligne: "left",
+            paddingY: "normal",
+            paddingX: "normal",
+            containerWidth: "small",
+            bgColor: "bg-transparent",
+            scrolledBgColor: "bg-[#fff]",
+            isFixed: true,
+            shadow: false
+        },
+        logo: {
+            logoSlug: "/pataki_white.png",
+            logoWidth: 90,
+            logoHeight: 90
+        },
+        navbar: {
+            navItems: [
+                { text: "Home", href: "#inicio" },
+                { text: "About", href: "#servicios" },
+                { text: "Portfolio", href: "#sobre-nosotros" },
+                { text: "News", href: "#contacto" },
+                { text: "Contact", href: "#blog" },
+            ],
+            navItemsColor: "text-white",
+            hoverColor: "hover:text-[#E54B4B]",
+            hoverUnderline: false,
+            hoverTransform: null,
+            itemsWeight: "normal",
+            fontSize: "normal",
+            fontFamily: "poppinsRegular",
+            transition: true,
+            spaceBetweenItems: "big"
+        },
+        // callAction: [
+        //     {
+        //         text: "EMPRESAS",
+        //         href: "#iniciar-sesion",
+        //         borderWidth: "normal",
+        //         borderRadius: "big",
+        //         borderColor: "border-[#383c43]",
+        //         hoverBorderColor: null,
+        //         backgroundColor: null,
+        //         hoverBackgroundColor: null,
+        //         textColor: "text-[#383c43]",
+        //         hoverTextColor: "hover:text-gray-600",
+        //         transition: true,
+        //         fontFamily: "oswald",
+        //         icon: "internet",
+        //         iconPosition: "left",
+        //         showInMobile: true,
+        //         paddingY: "low"
+        //     },
+        //     {
+        //         text: "LOG IN",
+        //         href: "#registrate",
+        //         borderWidth: "normal",
+        //         borderRadius: "big",
+        //         borderColor: "border-[#383c43]",
+        //         hoverBorderColor: null,
+        //         backgroundColor: "bg-[#383c43]",
+        //         hoverBackgroundColor: "hover:bg-gray-600",
+        //         textColor: "text-[#fff]",
+        //         hoverTextColor: null,
+        //         transition: true,
+        //         fontFamily: "oswald",
+        //         icon: null,
+        //         iconPosition: null,
+        //         paddingY: "low"
+        //     }
+        // ],
+        icons : {
+            icons: [
+                { icon: "ig", href: "#xd" },
+                { icon: "fb", href: "#xd" },
+                { icon: "x", href: "#" }
+            ],
+            spaceBetweenItems: "normal",
+            color: "text-gray-800",
+            hoverColor: "hover:text-gray-600",
+            size: "small"
+        },
+        menuMobile: {
+            type: "default",
+            color: "#fff",
+            navHeight: "big",
+            itemsColor: "text-gray-900",
+        }
+    },
+    mainBanner: {
+        type: 1,
+        global: {
+            bgImage: "/banner4.webp",
+            bgColor: "bg-[#0C1633]",
+            marginTop: "none",
+            height: "full",
+            containerWidth: "small",
+            y_orientation: "center",
+            x_orientation: "left"
+        },
+        textBlock: {
+            global: {
+                orientation: "left",
+                width: "normal",
+            },
+            title: {
+                text: "Alan Walker",
+                color: "text-white",
+                fontSize: "normal",
+                fontFamily: "poppinsBold"
+            },
+            // subtitle: {
+            //     text: "PATAKI LANDING PAGE",
+            //     color: "white",
+            //     fontSize: "small",
+            //     fontFamily: "barlow"
+            // },
+            textContent: {
+                text: "Web & Mobile App Developer",
+                color: "text-[#ddd]",
+                fontSize: "normal",
+                fontFamily: "poppinsRegular"
+            },
+            // callAction: {
+            //     text: "EMPRESAS",
+            //     href: "#iniciar-sesion",
+            //     borderWidth: "normal",
+            //     borderRadius: "big",
+            //     borderColor: "border-white",
+            //     hoverBorderColor: null,
+            //     backgroundColor: null,
+            //     hoverBackgroundColor: null,
+            //     showInMobile: true,
+            //     width: "normal",
+            //     textColor: "text-white",
+            //     hoverTextColor: "hover:text-white",
+            //     transition: true,
+            //     fontFamily: "oswald",
+            //     icon: "internet",
+            //     iconPosition: "left",
+            // },
+        },
+    }
+};
+
+export const demo_seven = {
+    header: {
+        type: 4,
+        global: {
+            aligne: "left",
+            paddingY: "low",
+            paddingX: "normal",
+            containerWidth: "normal",
+            bgColor: "bg-transparent",
+            scrolledBgColor: "bg-[#0F0F0F]",
+            isFixed: true,
+            shadow: false
+        },
+        logo: {
+            logoSlug: "/pataki_white.png",
+            logoWidth: 90,
+            logoHeight: 90
+        },
+        navbar: {
+            navItems: [
+                { text: "HOME", href: "#inicio" },
+                { text: "SERVICES", href: "#servicios" },
+                { text: "PROJECTS", href: "#sobre-nosotros" },
+                { text: "BLOG", href: "#contacto" },
+                { text: "ABOUT", href: "#blog" },
+                { text: "CONTACT", href: "#blog" }
+            ],
+            navItemsColor: "text-white",
+            hoverColor: "hover:text-[#E54B4B]",
+            hoverUnderline: false,
+            hoverTransform: null,
+            itemsWeight: "normal",
+            fontSize: "normal",
+            fontFamily: "poppinsRegular",
+            transition: true,
+            spaceBetweenItems: "big"
+        },
+        icons : {
+            icons: [
+                { icon: "ig", href: "#xd" },
+                { icon: "fb", href: "#xd" },
+                { icon: "x", href: "#" }
+            ],
+            spaceBetweenItems: "normal",
+            color: "text-gray-800",
+            hoverColor: "hover:text-gray-600",
+            size: "small"
+        },
+        menuMobile: {
+            type: "default",
+            color: "#fff",
+            menuBgColor: "bg-[#0F0F0F]",
+            navHeight: "big",
+            itemsColor: "text-white",
+        }
+    },
+    mainBanner: {
+        type: 1,
+        global: {
+            bgImage: "/banner5.webp",
+            bgColor: "bg-[#0C1633]",
+            marginTop: "none",
+            height: "high",
+            containerWidth: "small",
+            y_orientation: "bottom",
+            x_orientation: "center"
+        },
+        textBlock: {
+            global: {
+                orientation: "center",
+                width: "big",
+            },
+            title: {
+                text: "Freelance Brand Designer",
+                color: "text-white",
+                fontSize: "big",
+                fontFamily: "poppinsBold"
+            },
+            // subtitle: {
+            //     text: "PATAKI LANDING PAGE",
+            //     color: "white",
+            //     fontSize: "small",
+            //     fontFamily: "barlow"
+            // },
+            textContent: {
+                text: "Web & Mobile App Developer",
+                color: "text-[#ddd]",
+                fontSize: "normal",
+                fontFamily: "poppinsRegular"
+            },
+            callAction: {
+                text: "Get in touch",
+                href: "#iniciar-sesion",
+                borderWidth: "small",
+                borderRadius: "none",
+                borderColor: "border-[#ee4818]",
+                hoverBorderColor: "border-gray-800",
+                backgroundColor: "bg-[#ee4818]",
+                hoverBackgroundColor: "hover:bg-[#0F0F0F]",
+                showInMobile: true,
+                width: "small",
+                paddingY: "high",
+                textColor: "text-[#d5d5d5]",
+                hoverTextColor: null,
+                transition: true,
+                fontFamily: "poppinsRegular",
+                icon: null,
+                iconPosition: null,
             },
         },
     }

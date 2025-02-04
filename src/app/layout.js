@@ -21,6 +21,16 @@ const oswald = localFont({
   variable: "--font-oswald",
   weight: "100 900",
 });
+const poppinsRegular = localFont({
+  src: "./fonts/Poppins/Poppins-Regular.ttf",
+  variable: "--font-poppins-regular",
+  weight: "100 900",
+});
+const poppinsBold = localFont({
+  src: "./fonts/Poppins/Poppins-Bold.ttf",
+  variable: "--font-poppins-bold",
+  weight: "100 900",
+});
 
 export const metadata = {
   title: "Pataki landing pages",
@@ -31,7 +41,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${robotoMedium.variable} ${oswald.variable} antialiased`}
+        className={`${poppinsBold.variable} ${poppinsRegular.variable} ${geistSans.variable} ${geistMono.variable} ${robotoMedium.variable} ${oswald.variable} antialiased`}
       >
         {children}
       </body>

@@ -2,15 +2,17 @@ export default function Wrapper({
     children,
     bgImage,
     bgColor,
+    containerWidth = "normal", // Ancho de contenedor grande por defecto
     marginTop = "normal",
     height = "normal",
-    orientation = "top",
+    y_orientation = "center",
+    x_orientation = "center",
 }) {
 
     const heightClasses = {
         low: "60vh",
         normal: "70vh",
-        high: "80vh",
+        high: "750px",
         full: "100vh",
     };
     
@@ -28,10 +30,24 @@ export default function Wrapper({
         high: "157px",
     };
 
-    const orientationClasses = {
+    const containerWidthClasses = {
+        auto: "lg:w-[auto]",
+        small: "lg:max-w-[1124px]",
+        normal: "lg:max-w-[1280px]",
+        big: "lg:max-w-[1440px]",
+        full: "lg:w-full",
+    };
+
+    const y_orientationClasses = {
         top: "top-[200px]",
         center: "top-1/2 transform -translate-y-1/2",
-        bottom: "bottom-[100px]",
+        bottom: "bottom-[50px]",
+    }
+
+    const x_orientationClasses = {
+        left: "justify-start",
+        center: "justify-center",
+        right: "justify-end",
     }
 
     return (
@@ -44,7 +60,7 @@ export default function Wrapper({
                 height: `calc(${heightClasses[height]} - ${bannerHeight[marginTop]})`,
             }}
         >
-            <div className={`absolute  ${orientationClasses[orientation]}`}>
+            <div className={`absolute w-full flex ${y_orientationClasses[y_orientation]} ${containerWidthClasses[containerWidth]} ${x_orientationClasses[x_orientation]}`}>
                 {children}
             </div>
         </section>

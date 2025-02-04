@@ -25,9 +25,9 @@ export default function Navbar({
 
     // Clases de espacio entre elementos
     const spaceBetweenItemsClasses = {
-        small: "space-x-2",
-        normal: "space-x-4",
-        big: "space-x-6"
+        small: "space-x-4",
+        normal: "space-x-6",
+        big: "space-x-8"
     };
 
     // Clases de transformación al pasar el mouse

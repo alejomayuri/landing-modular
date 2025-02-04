@@ -64,7 +64,6 @@ export default function TextBlock({
                 flex flex-col
                 justify-center
                 ${widthClasses[width]}
-                p-4
             `}>
             {subtitleText && (
                 <h3 className={`${subtitleFontSizeClasses[subtitleFontSize]} ${subtitleColor} ${fontFamilyClasses[subtitleFontFamily]}`} style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.5)" }}>

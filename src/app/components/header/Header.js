@@ -16,6 +16,7 @@ export default function Header({ data }) {
     const {
         paddingY,
         paddingX,
+        containerWidth,
         bgColor,
         scrolledBgColor,
         isFixed,
@@ -149,7 +150,8 @@ export default function Header({ data }) {
         content = (
             <>
                 {showLogo}
-                {showCallAction}
+                {showNavbar}
+                {showMenuMobile}
             </>
         );
     } else if (type === 5) {
@@ -191,6 +193,7 @@ export default function Header({ data }) {
         <HeaderWrapper
             paddingY={paddingY}
             paddingX={paddingX}
+            containerWidth={containerWidth}
             bgColor={bgColor}
             isFixed={isFixed}
             scrolledBgColor={scrolledBgColor}
