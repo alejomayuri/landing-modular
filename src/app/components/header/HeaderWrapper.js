@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect } from "react";
+import { useScroll } from "../../hooks/useScroll";
 
 export default function HeaderWrapper({
     children, // Contenido del header
@@ -11,24 +11,11 @@ export default function HeaderWrapper({
     isFixed = true, // Position fixed por defecto
     aligne = "left", // Orientación horizontal por defecto
     shadow = false, // Sombra por defecto
+    border = null, // Borde por defecto
+    borderColor = null, // Color de borde
+    scrolledborderColor = null, // Color de borde al hacer scroll
 }) {
-    const [hasScrolled, setHasScrolled] = useState(false);
-
-    // Detectar scroll
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 50) {
-                setHasScrolled(true);
-            } else {
-                setHasScrolled(false);
-            }
-        };
-    
-        window.addEventListener("scroll", handleScroll);
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
+    const hasScrolled = useScroll();
 
     // Clases de padding en Y
     const paddingYClasses = {
@@ -64,12 +51,20 @@ export default function HeaderWrapper({
 
     // Clases dinámicas para el fondo
     const backgroundClass = hasScrolled ? scrolledBgColor ?? bgColor : bgColor;
+    const borderColorClass = hasScrolled ? scrolledborderColor ?? borderColor : borderColor;
+
+    // Clases de padding en Y
+    const borderClasses = {
+        small: "border-b-[1px]",
+        normal: "border-b-[3px]",
+        big: "border-b-[5px]",
+    };
 
     const shadowClass = shadow ? "shadow" : "";
 
     return (
         <header className={`
-            ${backgroundClass} ${paddingYClasses[paddingY]} ${paddingXClasses[paddingX]} ${positionClass} ${shadowClass}
+            ${backgroundClass} ${paddingYClasses[paddingY]} ${borderColorClass} ${borderClasses[border]} ${paddingXClasses[paddingX]} ${positionClass} ${shadowClass}
             transition-colors duration-300 px-4
         `}>
             <div className={`mx-auto flex items-center ${alignClasses[aligne]} ${containerWidthClasses[containerWidth]}`}>

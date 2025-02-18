@@ -10,9 +10,9 @@ export default function Wrapper({
 }) {
 
     const heightClasses = {
-        low: "60vh",
-        normal: "70vh",
-        high: "750px",
+        low: "400px",
+        normal: "600px",
+        high: "790px",
         full: "100vh",
     };
     

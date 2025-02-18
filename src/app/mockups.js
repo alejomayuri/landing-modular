@@ -496,16 +496,20 @@ export const demo_six = {
         type: 4,
         global: {
             aligne: "left",
-            paddingY: "normal",
+            paddingY: "low",
             paddingX: "normal",
             containerWidth: "small",
             bgColor: "bg-transparent",
             scrolledBgColor: "bg-[#fff]",
             isFixed: true,
-            shadow: false
+            shadow: false,
+            border: "normal",
+            borderColor: "border-[transparent]",
+            scrolledborderColor: "border-[#383c43]"
         },
         logo: {
             logoSlug: "/pataki_white.png",
+            logoSlugScrolled: "/pataki.png",
             logoWidth: 90,
             logoHeight: 90
         },
@@ -518,6 +522,7 @@ export const demo_six = {
                 { text: "Contact", href: "#blog" },
             ],
             navItemsColor: "text-white",
+            scrolledColor: "text-[#383c43]",
             hoverColor: "hover:text-[#E54B4B]",
             hoverUnderline: false,
             hoverTransform: null,

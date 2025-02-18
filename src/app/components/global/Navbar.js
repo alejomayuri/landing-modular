@@ -1,9 +1,12 @@
+"use client"
 import { fontFamilyClasses } from "../ui/fonts/familyClasses";
+import { useScroll } from "@/app/hooks/useScroll";
 
 export default function Navbar({
     navItems, // Elementos de navegación
     spaceBetweenItems = "normal", // Espacio entre elementos
     color = "text-gray-600", // Color de fuente
+    scrolledColor = null, // Color de fuente al hacer scroll
     hoverColor = null, // Color de fuente al pasar el mouse
     fontSize = "normal", // Tamaño de fuente
     fontFamily = "sans", // Familia de fuente
@@ -15,6 +18,8 @@ export default function Navbar({
     if (!navItems) {
         return null;
     }
+
+    const hasScrolled = useScroll();
 
     // Clases de tamaño de fuente
     const fontSizeClasses = {
@@ -44,10 +49,13 @@ export default function Navbar({
         big: "font-bold",
     };
 
+    // Clases dinámicas para el color
+    const colorClass = hasScrolled ? scrolledColor ?? color : color;
+
     return (
         <nav className={` hidden lg:flex ${spaceBetweenItemsClasses[spaceBetweenItems]}`}>
             {navItems.map((item, index) => (
-                <a key={index} href={item.href} id={`link-${index}`} className={`flex items-center ${fontSizeClasses[fontSize]} ${fontFamilyClasses[fontFamily]} ${hoverUnderline && "hover:underline"} ${color} ${hoverColor} ${hoverTransform && hoverTransformClasses[hoverTransform]} ${weightClasses[itemsWeight]} ${transition && "transition duration-200"} transform`}>
+                <a key={index} href={item.href} id={`link-${index}`} className={`flex items-center ${fontSizeClasses[fontSize]} ${fontFamilyClasses[fontFamily]} ${hoverUnderline && "hover:underline"} ${colorClass} ${hoverColor} ${hoverTransform && hoverTransformClasses[hoverTransform]} ${weightClasses[itemsWeight]} ${transition && "transition duration-200"} transform`}>
                     {item.text}
                 </a>
             ))}

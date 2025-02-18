@@ -21,7 +21,10 @@ export default function Header({ data }) {
         scrolledBgColor,
         isFixed,
         aligne,
-        shadow
+        shadow,
+        border,
+        borderColor,
+        scrolledborderColor
     } = global || {};
 
     // Componente Logo
@@ -29,6 +32,7 @@ export default function Header({ data }) {
         logo && Object.keys(logo).length > 0 ? (
             <Logo
                 logoSlug={logo.logoSlug}
+                logoSlugScrolled={logo.logoSlugScrolled}
                 logoWidth={logo.logoWidth}
                 logoHeight={logo.logoHeight}
             />
@@ -40,6 +44,7 @@ export default function Header({ data }) {
             <Navbar
                 navItems={navbar.navItems}
                 color={navbar.navItemsColor}
+                scrolledColor={navbar.scrolledColor}
                 hoverColor={navbar.hoverColor}
                 hoverUnderline={navbar.hoverUnderline}
                 hoverTransform={navbar.hoverTransform}
@@ -199,6 +204,9 @@ export default function Header({ data }) {
             scrolledBgColor={scrolledBgColor}
             aligne={aligne}
             shadow={shadow}
+            border={border}
+            borderColor={borderColor}
+            scrolledborderColor={scrolledborderColor}
         >
             {content}
         </HeaderWrapper>
