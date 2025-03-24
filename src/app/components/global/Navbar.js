@@ -15,10 +15,6 @@ export default function Navbar({
     itemsWeight = "normal", // Transformación al pasar el mouse
     transition = false, // Transición al pasar el mouse
 }) {
-    if (!navItems) {
-        return null;
-    }
-
     const hasScrolled = useScroll();
 
     // Clases de tamaño de fuente
@@ -51,6 +47,10 @@ export default function Navbar({
 
     // Clases dinámicas para el color
     const colorClass = hasScrolled ? scrolledColor ?? color : color;
+    
+    if (!navItems) {
+        return null;
+    }
 
     return (
         <nav className={`hidden lg:flex ${spaceBetweenItemsClasses[spaceBetweenItems]}`}>
