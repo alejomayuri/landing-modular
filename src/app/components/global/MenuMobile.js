@@ -8,6 +8,7 @@ import CallAction from "./CallAction";
 export default function MenuMobile({ 
     type = "default", 
     color,
+    closeColor,
     navItems,
     fontSize = "normal",
     itemsColor = "text-white",
@@ -18,7 +19,6 @@ export default function MenuMobile({
 }) {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [isVisible, setIsVisible] = useState(false)
-
     let menuIconType
     
     const toggleMenu = () => {
@@ -48,6 +48,8 @@ export default function MenuMobile({
         big: "h-4/6"
     }
 
+    const closeColorClass = closeColor ? closeColor : color
+
     if (type === "default") {
         menuIconType = <MenuIcon className="w-8 h-8" stroke={color} />;
     } else if (type === "text") {
@@ -69,7 +71,7 @@ export default function MenuMobile({
                     className="absolute top-5 right-5 text-2xl p-2 rounded-full"
                     onClick={toggleMenu}
                 >
-                    <CloseIcon className="w-5 h-5" fill={color} />
+                    <CloseIcon className="w-5 h-5" fill={closeColorClass} />
                 </button>
                 <nav className={`flex flex-col ${navHeightClasses[navHeight]} text-xl`}>
                     {navItems.map((item, index) => (

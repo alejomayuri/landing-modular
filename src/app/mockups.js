@@ -583,6 +583,7 @@ export const demo_six = {
         menuMobile: {
             type: "default",
             color: "#fff",
+            closeColor: "text-gray-800",
             navHeight: "big",
             itemsColor: "text-gray-900",
         }
@@ -621,24 +622,24 @@ export const demo_six = {
                 fontSize: "normal",
                 fontFamily: "poppinsRegular"
             },
-            // callAction: {
-            //     text: "EMPRESAS",
-            //     href: "#iniciar-sesion",
-            //     borderWidth: "normal",
-            //     borderRadius: "big",
-            //     borderColor: "border-white",
-            //     hoverBorderColor: null,
-            //     backgroundColor: null,
-            //     hoverBackgroundColor: null,
-            //     showInMobile: true,
-            //     width: "normal",
-            //     textColor: "text-white",
-            //     hoverTextColor: "hover:text-white",
-            //     transition: true,
-            //     fontFamily: "oswald",
-            //     icon: "internet",
-            //     iconPosition: "left",
-            // },
+            callAction: {
+                text: "EMPRESAS",
+                href: "#iniciar-sesion",
+                borderWidth: "normal",
+                borderRadius: "big",
+                borderColor: "border-white",
+                hoverBorderColor: null,
+                backgroundColor: null,
+                hoverBackgroundColor: null,
+                showInMobile: true,
+                width: "normal",
+                textColor: "text-white",
+                hoverTextColor: "hover:text-white",
+                transition: true,
+                fontFamily: "oswald",
+                icon: "internet",
+                iconPosition: "left",
+            },
         },
     }
 };
@@ -707,7 +708,7 @@ export const demo_seven = {
             marginTop: "none",
             height: "high",
             containerWidth: "small",
-            y_orientation: "bottom",
+            y_orientation: "center",
             x_orientation: "center"
         },
         textBlock: {
@@ -718,7 +719,7 @@ export const demo_seven = {
             title: {
                 text: "Freelance Brand Designer",
                 color: "text-white",
-                fontSize: "big",
+                fontSize: "small",
                 fontFamily: "poppinsBold"
             },
             // subtitle: {

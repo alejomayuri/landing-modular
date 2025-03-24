@@ -60,7 +60,7 @@ export default function Wrapper({
                 height: `calc(${heightClasses[height]} - ${bannerHeight[marginTop]})`,
             }}
         >
-            <div className={`absolute w-full flex ${y_orientationClasses[y_orientation]} ${containerWidthClasses[containerWidth]} ${x_orientationClasses[x_orientation]}`}>
+            <div className={`px-4 lg:px-0 absolute w-full flex ${y_orientationClasses[y_orientation]} ${containerWidthClasses[containerWidth]} ${x_orientationClasses[x_orientation]}`}>
                 {children}
             </div>
         </section>
