@@ -122,6 +122,7 @@ export default function Header({ data }) {
         <MenuMobile
             type={menuMobile.type}
             color={menuMobile.color}
+            scrolledColor={menuMobile.scrolledColor}
             closeColor={menuMobile.closeColor}
             navHeight={menuMobile.navHeight}
             navItems={navbar.navItems}

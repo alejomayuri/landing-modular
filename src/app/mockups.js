@@ -583,6 +583,7 @@ export const demo_six = {
         menuMobile: {
             type: "default",
             color: "#fff",
+            scrolledColor: "#000",
             closeColor: "text-gray-800",
             navHeight: "big",
             itemsColor: "text-gray-900",

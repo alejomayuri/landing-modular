@@ -4,10 +4,12 @@ import MenuIcon from "../ui/icons/menu";
 import CloseIcon from "../ui/icons/close";
 import IconBox from "./IconBox";
 import CallAction from "./CallAction";
+import { useScroll } from "@/app/hooks/useScroll";
 
 export default function MenuMobile({ 
     type = "default", 
     color,
+    scrolledColor,
     closeColor,
     navItems,
     fontSize = "normal",
@@ -17,6 +19,8 @@ export default function MenuMobile({
     callAction,
     navHeight = "normal"
 }) {
+    const hasScrolled = useScroll();
+
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [isVisible, setIsVisible] = useState(false)
     let menuIconType
@@ -49,9 +53,10 @@ export default function MenuMobile({
     }
 
     const closeColorClass = closeColor ? closeColor : color
+    const colorClass = hasScrolled ? scrolledColor ?? color : color;
 
     if (type === "default") {
-        menuIconType = <MenuIcon className="w-8 h-8" stroke={color} />;
+        menuIconType = <MenuIcon className="w-8 h-8" stroke={colorClass} />;
     } else if (type === "text") {
         menuIconType = <p
             className={`text-base font-bold ${itemsColor}`}
