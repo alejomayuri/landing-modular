@@ -23,8 +23,8 @@ export default function TextBlock({
     }
 
     const titleFontSizeClasses = {
-        small: "text-5xl lg_text-6xl mb-5",
-        normal: "text-6xl lg:text-7xl  mb-6",
+        small: "text-4xl lg_text-6xl mb-5",
+        normal: "text-5xl lg:text-7xl  mb-6",
         big: "text-7xl lg:text-8xl mb-8",
         // big: "text-8xl mb-8"
     };

@@ -689,7 +689,7 @@ export const demo_seven = {
                 { icon: "x", href: "#" }
             ],
             spaceBetweenItems: "normal",
-            color: "text-gray-800",
+            color: "text-white",
             hoverColor: "hover:text-gray-600",
             size: "small"
         },
@@ -720,7 +720,7 @@ export const demo_seven = {
             title: {
                 text: "Freelance Brand Designer",
                 color: "text-white",
-                fontSize: "small",
+                fontSize: "big",
                 fontFamily: "poppinsBold"
             },
             // subtitle: {
