@@ -1,10 +1,7 @@
 import Wrapper from "./Wrapper";
 import TextBlock from "./TextBlock";
 
-export default function MainBanner({
-    data,
-    // marginTop
-}) {
+export default function MainBanner({ data }) {
     if (!data || Object.keys(data).length === 0) {
         return null; // Devuelve null si no hay datos
     }

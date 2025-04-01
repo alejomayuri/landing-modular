@@ -755,5 +755,34 @@ export const demo_seven = {
                 iconPosition: null,
             },
         },
+    },
+    imageBox: {
+        type: 1,
+        global: {
+            bgColor: "bg-[#EBA021]",
+            paddingY: "low",
+            paddingX: "normal",
+        },
+        title: {
+            text: "Freelance Brand Designer",
+            color: "text-red-600",
+            fontSize: "normal",
+            fontFamily: "poppinsBold"
+        },
+        items: {
+            items: [
+                { slug: ["/imageBox/image1.jpg", "/imageBox/image2.jpg"], title: "", text: "Web & Mobile App Developer" },
+                { slug: ["/imageBox/image2.jpg", "/imageBox/image3.jpg"], title: "", text: "Web & Mobile App Developer" },
+                { slug: ["/imageBox/image3.jpg", "/imageBox/image1.jpg"], title: "", text: "Web & Mobile App Developer" }
+            ],
+            spaceBetweenItems: "normal",
+            // effect: "swap",
+            effect: "zoom-in",
+            // effect: "glassmorphism",
+            // effect: "scroll",
+            color: "text-white",
+            hoverColor: "hover:text-gray-600",
+            size: "small"
+        }
     }
 };

@@ -1,5 +1,6 @@
 import Header from "./components/header/Header";
 import MainBanner from "./components/mainBanner/MainBanner";
+import ImageBox from "./components/imageBox/ImageBox";
 import { defaultData, demo_first, demo_second, demo_third, demo_fourth, demo_fifth, demo_six, demo_seven } from "./mockups";
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
       <Header data={data?.header} />
       <main>
         <MainBanner data={data?.mainBanner} />
+        <ImageBox data={data?.imageBox} />
         <section className="
           bg-[#000] h-screen
         ">Sección 2</section>
